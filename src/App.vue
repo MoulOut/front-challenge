@@ -1,27 +1,42 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+    <PageHeader />
+    <PageHero />
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import HelloWorld from './components/HelloWorld.vue';
+import PageHeader from './components/PageHeader.vue';
+import PageHero from '@/components/PageHero.vue';
 
 export default defineComponent({
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+    name: 'App',
+    components: {
+        PageHeader,
+        PageHero,
+    },
 });
 </script>
 
 <style>
+:root {
+    --white: #fff8f2;
+    --red: #f09497;
+    --pink: #fdccb4;
+    --light-blue: #9ad3cf;
+    --blue: #12758d;
+    --purple: #c6a8f6;
+    --green: #abe5bc;
+    --black: #373737;
+    --background: #fcf6e8;
+
+    --primary-font: 'Poppins';
+
+    background-color: var(--light-blue);
+}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+    font-family: var(--primary-font);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 </style>
