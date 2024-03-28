@@ -34,6 +34,8 @@ export default defineComponent({
 <style scoped>
 .header {
     background-color: var(--light-blue);
+    position: relative;
+    z-index: 10;
 }
 
 .header__logo {
@@ -64,7 +66,7 @@ export default defineComponent({
 
 .header__button {
     text-decoration: none;
-    color: var(--white);
+    color: var(--light-blue);
     padding: 0.5em;
     background-color: var(--black);
     border-radius: 0.5em;

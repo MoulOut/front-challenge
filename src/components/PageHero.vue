@@ -1,8 +1,15 @@
 <template>
     <section class="hero">
+        <img src="@/assets/images/Star 7.svg" alt="" class="hero-star-top" />
         <h1 class="hero__title">
-            Get started with 5000+ classic literature books
+            Get started with 5000+ classic literature books.
+            <img
+                src="@/assets/images/Star 6.svg"
+                alt="estrela"
+                class="hero__title-star"
+            />
         </h1>
+        <img src="@/assets/images/Star 6.svg" alt="" class="hero-star-bottom" />
     </section>
 </template>
 
@@ -19,9 +26,34 @@ export default defineComponent({
     background-color: var(--background);
     text-align: center;
     padding: 2em;
+    position: relative;
 }
 
 .hero__title {
     font-size: 2em;
+    position: relative;
+    font-weight: 500;
+}
+
+.hero__title-star {
+    position: absolute;
+    width: 5%;
+    top: -0.5em;
+    transform: rotate(45deg);
+}
+
+.hero-star-bottom {
+    position: absolute;
+    left: 1em;
+    transform: rotate(15deg);
+    width: 10%;
+    bottom: -1em;
+}
+.hero-star-top {
+    position: absolute;
+    left: -2em;
+    transform: rotate(40deg);
+    width: 25%;
+    top: -2.9em;
 }
 </style>
