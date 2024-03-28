@@ -25,7 +25,7 @@ export default defineComponent({
 .hero {
     background-color: var(--background);
     text-align: center;
-    padding: 2em;
+    padding: 3em 2em;
     position: relative;
 }
 
@@ -37,23 +37,25 @@ export default defineComponent({
 
 .hero__title-star {
     position: absolute;
-    width: 5%;
+    width: 0.7em;
     top: -0.5em;
     transform: rotate(45deg);
+    right: 0;
 }
 
 .hero-star-bottom {
     position: absolute;
     left: 1em;
     transform: rotate(15deg);
-    width: 10%;
+    width: 2em;
     bottom: -1em;
 }
+
 .hero-star-top {
     position: absolute;
     left: -2em;
     transform: rotate(40deg);
-    width: 25%;
+    width: 6em;
     top: -2.9em;
 }
 </style>
