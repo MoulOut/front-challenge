@@ -47,6 +47,10 @@ export default defineComponent({
     align-items: center;
 }
 
+.header__title {
+    display: none;
+}
+
 .header__title-bold {
     margin-left: 0.5em;
     font-weight: 700;
@@ -67,10 +71,10 @@ export default defineComponent({
 .header__button {
     text-decoration: none;
     color: var(--light-blue);
-    padding: 0.5em;
+    padding: 0.5em 1em;
     background-color: var(--black);
     border-radius: 0.5em;
-    margin-right: 1em;
+    margin: 0 1em;
 }
 
 .hamburguer {

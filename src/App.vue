@@ -28,6 +28,7 @@ export default defineComponent({
     --green: #abe5bc;
     --black: #373737;
     --background: #fcf6e8;
+    --yellow: #fec447;
 
     --primary-font: 'Poppins';
 
