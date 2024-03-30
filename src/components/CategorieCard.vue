@@ -26,7 +26,6 @@ export default defineComponent({
 <style scoped>
 .categorie {
     width: 25vw;
-    position: relative;
     font-size: 12px;
     text-align: center;
     border: 1px solid black;
@@ -35,14 +34,12 @@ export default defineComponent({
 }
 
 .categorie-colorblock {
-    display: absolute;
     margin-top: 1em;
-    left: -1em;
     height: 1em;
     background-color: var(--yellow);
     border-top: 1px solid black;
     border-bottom: 1px solid black;
-    width: 100%;
+    width: 25vw;
 }
 
 .categorie-content {

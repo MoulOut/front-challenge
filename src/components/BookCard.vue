@@ -33,7 +33,6 @@ export default defineComponent({
 <style scoped>
 .book {
     width: 25vw;
-    position: relative;
     font-size: 12px;
     text-align: center;
     border: 1px solid black;
@@ -42,14 +41,12 @@ export default defineComponent({
 }
 
 .book-colorblock {
-    display: absolute;
     margin-top: 1em;
-    left: -1em;
     height: 1em;
     background-color: var(--yellow);
     border-top: 1px solid black;
     border-bottom: 1px solid black;
-    width: 100%;
+    width: 25vw;
 }
 
 .book-content {

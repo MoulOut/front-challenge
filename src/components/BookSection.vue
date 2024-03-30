@@ -1,5 +1,5 @@
 <template>
-    <section class="content">
+    <section class="content__section">
         <div class="section__header">
             <h2 class="section__title">Our Favorite Books</h2>
             <a href="#" class="section__article"> More > </a>
@@ -23,7 +23,7 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.content {
+.content__section {
     padding: 2em 1em;
 }
 
@@ -40,7 +40,7 @@ export default defineComponent({
 }
 
 .section__title {
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .section__article {

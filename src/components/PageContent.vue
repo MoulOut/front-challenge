@@ -2,18 +2,20 @@
     <main class="content">
         <div class="content__header"></div>
         <CategorieSection />
-        <BookSection/>
+        <BookSection />
+        <InfoSection />
     </main>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
 import CategorieSection from './CategorieSection.vue';
-import BookSection from '@/components/BookSection.vue'
+import BookSection from '@/components/BookSection.vue';
+import InfoSection from './InfoSection.vue';
 
 export default defineComponent({
     name: 'PageContent',
-    components: { CategorieSection,BookSection },
+    components: { CategorieSection, BookSection, InfoSection },
 });
 </script>
 

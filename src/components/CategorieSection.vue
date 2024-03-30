@@ -66,7 +66,7 @@ export default defineComponent({
 }
 
 .section__card-title {
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .section__card-article {
