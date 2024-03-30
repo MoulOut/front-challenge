@@ -2,6 +2,7 @@
     <PageHeader />
     <PageHero />
     <PageContent />
+    <PageFooter />
 </template>
 
 <script lang="ts">
@@ -9,6 +10,7 @@ import { defineComponent } from 'vue';
 import PageHeader from './components/PageHeader.vue';
 import PageHero from '@/components/PageHero.vue';
 import PageContent from '@/components/PageContent.vue';
+import PageFooter from '@/components/PageFooter.vue';
 
 export default defineComponent({
     name: 'App',
@@ -16,6 +18,7 @@ export default defineComponent({
         PageHeader,
         PageHero,
         PageContent,
+        PageFooter,
     },
 });
 </script>
