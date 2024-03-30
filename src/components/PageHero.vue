@@ -15,6 +15,7 @@
         <input
             type="text"
             class="hero__filter"
+            id="hero__filter"
             placeholder="Find your favorite book"
         />
         <label for="hero__filter"></label>
