@@ -45,8 +45,8 @@ export default defineComponent({
     background: var(--background-gradient);
     padding: 1em;
     border: 1px solid black;
-    border-top-left-radius: 1em;
-    border-bottom-right-radius: 1em;
+    border-top-left-radius: 2em;
+    border-bottom-right-radius: 2em;
     box-shadow: 2px 3px;
     z-index: 2;
 }
