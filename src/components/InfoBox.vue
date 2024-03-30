@@ -29,7 +29,7 @@ export default defineComponent({
 }
 
 .box-image {
-    border: 3px double v-bind(color);
+    border: 4px ridge v-bind(color);
     border-radius: 0.5em;
     padding: 2em;
     margin-bottom: 1em;

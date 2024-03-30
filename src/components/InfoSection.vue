@@ -4,10 +4,10 @@
             <h2 class="section__title">How We Work</h2>
         </div>
         <ul class="section__info">
-            <InfoBox color="blue" description="Pick your book" />
-            <InfoBox color="yellow" description="Pick your book" />
-            <InfoBox color="pink" description="Pick your book" />
-            <InfoBox color="purple" description="Pick your book" />
+            <InfoBox color="var(--light-blue)" description="Pick your book" />
+            <InfoBox color="var(--yellow)" description="Add to cart" />
+            <InfoBox color="var(--pink)" description="Bill payment" />
+            <InfoBox color="var(--purple)" description="Delivery" />
         </ul>
     </section>
 </template>
