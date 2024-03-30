@@ -68,4 +68,8 @@ export default defineComponent({
     border-radius: 0.5em;
     box-shadow: 2px 2px;
 }
+
+.book-article:hover {
+    background-color: var(--light-blue);
+}
 </style>

@@ -5,19 +5,27 @@
         <BookSection />
         <InfoSection />
         <RedirectSection />
+        <SubSection />
     </main>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
 import CategorieSection from './CategorieSection.vue';
-import BookSection from '@/components/BookSection.vue';
+import BookSection from './BookSection.vue';
 import InfoSection from './InfoSection.vue';
 import RedirectSection from './RedirectSection.vue';
+import SubSection from './SubSection.vue';
 
 export default defineComponent({
     name: 'PageContent',
-    components: { CategorieSection, BookSection, InfoSection,RedirectSection },
+    components: {
+        CategorieSection,
+        BookSection,
+        InfoSection,
+        RedirectSection,
+        SubSection,
+    },
 });
 </script>
 

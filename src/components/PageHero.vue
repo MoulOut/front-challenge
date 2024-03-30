@@ -95,4 +95,8 @@ export default defineComponent({
     box-shadow: 2px 2px;
     font-size: 16px;
 }
+
+.hero__button:hover {
+    background-color: var(--yellow);
+}
 </style>
