@@ -91,4 +91,23 @@ strong {
     flex-direction: column;
     justify-content: space-evenly;
 }
+
+@media screen and (min-width: 768px) {
+    .content__section__card {
+        margin: 3em;
+        height: 35vh;
+    }
+
+    .section__card-title {
+        font-size: 36px;
+    }
+
+    strong {
+        font-size: 40px;
+    }
+
+    .section__card-article {
+        font-size: 20px;
+    }
+}
 </style>

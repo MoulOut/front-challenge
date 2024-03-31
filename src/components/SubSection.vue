@@ -112,7 +112,8 @@ export default defineComponent({
         align-items: center;
         text-align: start;
         padding: 2em;
-        margin: 2em;
+        margin: 3em;
+        height: 25vh;
     }
 
     .section__card-title {
@@ -126,7 +127,7 @@ export default defineComponent({
 
     .card-form {
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: start;
     }
 
     .form-input {
