@@ -9,8 +9,8 @@
             <h3 class="section__card-title">Subscribe to our Newsletter</h3>
             <div class="section__card-texts">
                 <h2 class="section__card-text">
-                    Stay in the know! Subscribe for updates-<br />zero spam, all
-                    gems delivered to your inbox.
+                    Stay in the know! Subscribe for updates-zero spam, all gems
+                    delivered to your inbox.
                 </h2>
                 <div class="card-form">
                     <input
@@ -43,8 +43,6 @@ export default defineComponent({
 }
 
 .content__section__card {
-    display: flex;
-    flex-direction: column;
     position: relative;
     background-color: var(--background);
     padding: 1em 1.5em;
@@ -106,5 +104,42 @@ export default defineComponent({
     padding: 0.5em 1em;
     margin-bottom: 1em;
     width: 70%;
+}
+
+@media screen and (min-width: 768px) {
+    .content__section__card {
+        display: flex;
+        align-items: center;
+        text-align: start;
+        padding: 2em;
+        margin: 2em;
+    }
+
+    .section__card-title {
+        font-size: 32px;
+        width: 50%;
+    }
+
+    .section__card-text {
+        font-weight: 500;
+    }
+
+    .card-form {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .form-input {
+        width: 50%;
+        margin: 0;
+        margin-right: 1em;
+    }
+
+    .section__card-texts {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        width: 60%;
+    }
 }
 </style>
