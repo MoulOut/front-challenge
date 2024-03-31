@@ -38,6 +38,7 @@ export default defineComponent({
 
 .content__section__card {
     display: flex;
+    justify-content: end;
     position: relative;
     background-color: var(--background);
     padding: 1em;
@@ -87,6 +88,7 @@ strong {
 }
 
 .section__card-texts {
+    width: 60%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -95,7 +97,7 @@ strong {
 @media screen and (min-width: 768px) {
     .content__section__card {
         margin: 3em;
-        height: 35vh;
+        height: 250px;
     }
 
     .section__card-title {
@@ -108,6 +110,14 @@ strong {
 
     .section__card-article {
         font-size: 20px;
+    }
+
+    .section__card-image {
+        width: 400px;
+        height: 400px;
+        position: relative;
+        left: -70px;
+        bottom: 90px;
     }
 }
 </style>
