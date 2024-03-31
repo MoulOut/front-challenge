@@ -28,13 +28,13 @@ export default defineComponent({
     --white: #fff8f2;
     --red: #f09497;
     --pink: #fdccb4;
-    --light-blue: #d0e3dd;
+    --light-blue: #9ad3cf;
     --blue: #12758d;
     --purple: #c6a8f6;
     --green: #abe5bc;
     --black: #373737;
     --background: #fcf6e8;
-    --background-gradient: linear-gradient(to bottom, #fdccb4, #d0e3dd);
+    --background-gradient: linear-gradient(to bottom, #fdccb4, #9ad3cf);
     --yellow: #fec447;
 
     --primary-font: 'Poppins';
