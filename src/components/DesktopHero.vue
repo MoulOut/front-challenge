@@ -42,6 +42,7 @@ export default defineComponent({
     text-align: start;
     padding: 3em 4em;
     position: relative;
+    height: 65vh;
 }
 
 .hero__texts {
