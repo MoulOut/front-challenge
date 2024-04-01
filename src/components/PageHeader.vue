@@ -3,7 +3,7 @@
         <div class="header__content">
             <div class="header__content__logo-title">
                 <img
-                    src="@/assets/images/Logo.png"
+                    src="@/assets/images/Logo.svg"
                     alt="logo"
                     class="header__logo"
                 />
@@ -47,7 +47,7 @@ export default defineComponent({
 }
 
 .header__logo {
-    width: 50px;
+    width: 60px;
 }
 
 .header__content__logo-title {
