@@ -5,9 +5,13 @@
             <a href="#" class="section__article"> More > </a>
         </div>
         <ul class="books">
-            <BookCard />
-            <BookCard />
-            <BookCard />
+            <BookCard
+                v-for="book in books"
+                :key="book.id"
+                :author="book.author"
+                :title="book.title"
+                :price="book.price"
+            />
         </ul>
     </section>
 </template>
@@ -15,10 +19,20 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import BookCard from '@/components/BookCard.vue';
+import { useStore } from '@/store';
 
 export default defineComponent({
     name: 'BookSection',
     components: { BookCard },
+    setup() {
+        const store = useStore();
+
+        console.log(store.state.books);
+
+        return {
+            books: store.state.books || [],
+        };
+    },
 });
 </script>
 
@@ -58,7 +72,7 @@ export default defineComponent({
         font-size: 24px;
     }
 
-    .section__article{
+    .section__article {
         font-size: 20px;
     }
 }
