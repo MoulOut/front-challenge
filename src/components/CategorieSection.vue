@@ -1,11 +1,11 @@
 <template>
     <section class="content__section">
-        <img
-            src="@/assets/images/Star 7.svg"
-            alt="Star"
-            class="section__card-star"
-        />
         <div class="content__section__card">
+            <img
+                src="@/assets/images/Star 7.svg"
+                alt="Star"
+                class="section__card-star"
+            />
             <div class="section__card-header">
                 <h2 class="section__card-title">
                     Categories suggested for you
@@ -38,6 +38,7 @@ export default defineComponent({
     position: relative;
     background-color: var(--background);
     padding: 2em 1em;
+    z-index: 0;
 }
 
 .content__section__card {
@@ -48,7 +49,7 @@ export default defineComponent({
     border-top-left-radius: 2em;
     border-bottom-right-radius: 2em;
     box-shadow: 2px 3px;
-    z-index: 2;
+    z-index: 10;
 }
 
 .section__card-header {
@@ -59,10 +60,10 @@ export default defineComponent({
 .section__card-star {
     position: absolute;
     transform: rotate(25deg);
-    right: 0;
-    top: 0;
+    right: -20px;
+    top: -30px;
     width: 60px;
-    z-index: 0;
+    z-index: -100;
 }
 
 .section__card-title {
@@ -79,5 +80,19 @@ export default defineComponent({
     margin-top: 1.5em;
     display: flex;
     justify-content: space-around;
+}
+
+@media screen and (min-width: 768px) {
+    .content__section__card {
+        margin: 3em;
+    }
+
+    .section__card-title {
+        font-size: 24px;
+    }
+
+    .section__card-article {
+        font-size: 20px;
+    }
 }
 </style>

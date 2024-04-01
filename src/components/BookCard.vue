@@ -5,7 +5,7 @@
             <img src="" alt="" class="book-image" />
             <h4 class="book-title">{{ title }}</h4>
             <p class="book-author">{{ author }}</p>
-            <p class="book-price">${{ price }}</p>
+            <p class="book-price">{{ price }}</p>
             <a href="#" class="book-article">Buy Now</a>
         </div>
     </li>
@@ -32,7 +32,7 @@ export default defineComponent({
 
 <style scoped>
 .book {
-    width: 25vw;
+    width: 20vw;
     font-size: 12px;
     text-align: center;
     border: 1px solid black;
@@ -46,11 +46,13 @@ export default defineComponent({
     background-color: var(--yellow);
     border-top: 1px solid black;
     border-bottom: 1px solid black;
-    width: 25vw;
+    width: 20vw;
 }
 
 .book-content {
     padding: 1em;
+    display: flex;
+    flex-direction: column;
 }
 
 .book-title {

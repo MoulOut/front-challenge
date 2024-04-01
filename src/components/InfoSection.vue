@@ -1,7 +1,7 @@
 <template>
     <section class="content__section">
         <div class="section__header">
-            <h2 class="section__title">How We Work</h2>
+            <h2 class="section__title">How we Work</h2>
         </div>
         <ul class="section__info">
             <InfoBox color="var(--light-blue)" description="Pick your book" />
@@ -42,5 +42,15 @@ export default defineComponent({
     display: flex;
     justify-content: space-between;
     margin: 2em 1em;
+}
+
+@media screen and (min-width: 768px) {
+    .content__section {
+        padding: 3em 4em;
+    }
+
+    .section__title {
+        font-size: 24px;
+    }
 }
 </style>

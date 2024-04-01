@@ -48,4 +48,18 @@ export default defineComponent({
     color: var(--black);
     font-weight: 600;
 }
+
+@media screen and (min-width: 768px) {
+    .content__section {
+        padding: 3em 4em;
+    }
+
+    .section__title {
+        font-size: 24px;
+    }
+
+    .section__article{
+        font-size: 20px;
+    }
+}
 </style>

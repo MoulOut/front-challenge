@@ -23,9 +23,11 @@ export default defineComponent({
 
 <style scoped>
 .info-box {
-    display: row;
-    flex-wrap: wrap;
     text-align: center;
+}
+
+p{
+    font-weight: 500;
 }
 
 .box-image {

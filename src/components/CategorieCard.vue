@@ -25,7 +25,7 @@ export default defineComponent({
 
 <style scoped>
 .categorie {
-    width: 25vw;
+    width: 20vw;
     font-size: 12px;
     text-align: center;
     border: 1px solid black;
@@ -39,7 +39,7 @@ export default defineComponent({
     background-color: var(--yellow);
     border-top: 1px solid black;
     border-bottom: 1px solid black;
-    width: 25vw;
+    width: 20vw;
 }
 
 .categorie-content {
@@ -54,5 +54,11 @@ export default defineComponent({
 .categorie-article {
     text-decoration: none;
     color: black;
+}
+
+@media screen and (min-width: 768px) {
+    .categorie {
+        font-size: 16px;
+    }
 }
 </style>
