@@ -78,7 +78,7 @@ export default defineComponent({
 .hero__filter {
     background: transparent;
     padding: 1em;
-    border-radius: 1em;
+    border-radius: 0.5em;
     border: 1px solid var(--black);
     width: 55%;
 }
@@ -91,7 +91,7 @@ export default defineComponent({
     padding: 1em 2em;
     font-weight: 600;
     border: 1px solid;
-    border-radius: 1em;
+    border-radius: 0.5em;
     background-color: var(--yellow);
     box-shadow: 2px 2px;
     font-size: 16px;

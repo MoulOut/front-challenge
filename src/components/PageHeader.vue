@@ -7,12 +7,20 @@
                     alt="logo"
                     class="header__logo"
                 />
+                <nav class="header__links">
+                    <RouterLink class="links" to="/">Home</RouterLink>
+                    <RouterLink class="links" to="/bookstore"
+                        >BookStore</RouterLink
+                    >
+                    <RouterLink class="links" to="/about">About Us</RouterLink>
+                </nav>
                 <p class="header__title">
                     <b class="header__title-bold">Moul</b>Books
                 </p>
             </div>
             <div class="header__buttons">
-                <a href="#" class="header__button">Sign In now</a>
+                <a href="#" class="header__signin">Sign In now</a>
+                <a href="#" class="header__login">Log in</a>
                 <img
                     src="@/assets/images/menu-hamburguer.png"
                     alt="menu"
@@ -68,16 +76,69 @@ export default defineComponent({
     align-items: center;
 }
 
-.header__button {
+.header__signin {
     text-decoration: none;
-    color: var(--light-blue);
+    color: var(--white);
     padding: 0.5em 1em;
     background-color: var(--black);
+    border: 1px solid var(--black);
     border-radius: 0.5em;
     margin: 0 1em;
 }
 
+.header__signin:hover {
+    background-color: var(--yellow);
+    color: black;
+}
+
+.header__login {
+    text-decoration: none;
+    color: var(--black);
+    border: 1px solid var(--black);
+    padding: 0.5em 1em;
+    border-radius: 0.5em;
+    margin: 0 1em;
+}
+
+.header__login:hover {
+    background-color: var(--light-blue);
+    color: black;
+}
+
 .hamburguer {
     width: 24px;
+}
+
+.header__links {
+    display: none;
+}
+.links {
+    text-decoration: none;
+    color: var(--black);
+    margin: 0 1em;
+}
+
+.links:active {
+    color: black;
+    font-weight: 500;
+    border-bottom: 2px solid var(--blue);
+}
+
+@media screen and (min-width: 768px) {
+    .header {
+        background-color: var(--background);
+    }
+
+    .header__content {
+        padding: 1em 4em;
+    }
+
+    .header__links {
+        display: flex;
+    }
+
+    .hamburguer {
+        display: none;
+    }
 }
 </style>
