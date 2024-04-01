@@ -113,7 +113,7 @@ export default defineComponent({
         text-align: start;
         padding: 2em;
         margin: 3em;
-        height: 25vh;
+        height: 200px;
     }
 
     .section__card-title {
