@@ -3,10 +3,13 @@
         <div class="header__content">
             <div class="header__content__logo-title">
                 <img
-                    src="@/assets/images/vecteezy_book-read-library-study-line-icon-vector-illustration_4853320.svg"
+                    src="@/assets/images/Logo.png"
                     alt="logo"
                     class="header__logo"
                 />
+                <p class="header__title">
+                    <b class="header__title-bold">Moul</b>Books
+                </p>
                 <nav class="header__links">
                     <RouterLink class="links" to="/">Home</RouterLink>
                     <RouterLink class="links" to="/bookstore"
@@ -14,9 +17,6 @@
                     >
                     <RouterLink class="links" to="/about">About Us</RouterLink>
                 </nav>
-                <p class="header__title">
-                    <b class="header__title-bold">Moul</b>Books
-                </p>
             </div>
             <div class="header__buttons">
                 <a href="#" class="header__signin">Sign In now</a>
@@ -47,7 +47,7 @@ export default defineComponent({
 }
 
 .header__logo {
-    width: 24px;
+    width: 50px;
 }
 
 .header__content__logo-title {
@@ -127,6 +127,10 @@ export default defineComponent({
 @media screen and (min-width: 768px) {
     .header {
         background-color: var(--background);
+    }
+
+    .header__title {
+        display: block;
     }
 
     .header__content {
