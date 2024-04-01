@@ -50,12 +50,14 @@ export default defineComponent({
     width: 60px;
 }
 
-.header__content__logo-title {
+.header__content__logo-title,
+.header__buttons {
     display: flex;
     align-items: center;
 }
 
-.header__title {
+.header__title,
+.header__links {
     display: none;
 }
 
@@ -71,19 +73,18 @@ export default defineComponent({
     padding: 1em;
 }
 
-.header__buttons {
-    display: flex;
-    align-items: center;
+.header__signin,
+.header__login {
+    text-decoration: none;
+    padding: 0.5em 1em;
+    border-radius: 0.5em;
+    margin: 0 1em;
+    border: 1px solid var(--black);
+    color: var(--white);
 }
 
 .header__signin {
-    text-decoration: none;
-    color: var(--white);
-    padding: 0.5em 1em;
     background-color: var(--black);
-    border: 1px solid var(--black);
-    border-radius: 0.5em;
-    margin: 0 1em;
 }
 
 .header__signin:hover {
@@ -92,26 +93,17 @@ export default defineComponent({
 }
 
 .header__login {
-    text-decoration: none;
     color: var(--black);
-    border: 1px solid var(--black);
-    padding: 0.5em 1em;
-    border-radius: 0.5em;
-    margin: 0 1em;
 }
 
 .header__login:hover {
     background-color: var(--light-blue);
-    color: black;
 }
 
 .hamburguer {
     width: 24px;
 }
 
-.header__links {
-    display: none;
-}
 .links {
     text-decoration: none;
     color: var(--black);
