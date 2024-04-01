@@ -94,6 +94,7 @@ export default defineComponent({
 
 .header__login {
     color: var(--black);
+    display: none;
 }
 
 .header__login:hover {
@@ -119,6 +120,10 @@ export default defineComponent({
 @media screen and (min-width: 768px) {
     .header {
         background-color: var(--background);
+    }
+
+    .header__login{
+        display: block;
     }
 
     .header__title {
