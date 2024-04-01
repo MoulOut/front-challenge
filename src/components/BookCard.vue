@@ -2,7 +2,7 @@
     <li class="book">
         <div class="book-colorblock"></div>
         <div class="book-content">
-            <img src="" alt="" class="book-image" />
+            <img :src="image" alt="" class="book-image" />
             <h4 class="book-title">{{ title }}</h4>
             <p class="book-author">{{ author }}</p>
             <p class="book-price">{{ price }}</p>
@@ -25,6 +25,9 @@ export default defineComponent({
         },
         price: {
             type: Number,
+        },
+        image: {
+            type: String,
         },
     },
 });

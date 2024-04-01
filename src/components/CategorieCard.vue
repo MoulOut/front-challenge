@@ -2,7 +2,7 @@
     <li class="categorie">
         <div class="categorie-colorblock"></div>
         <div class="categorie-content">
-            <img src="" alt="" class="categorie-image" />
+            <img :src="image" alt="" class="categorie-image" />
             <p class="categorie-title">{{ title }}</p>
             <a href="#" class="categorie-article">More ></a>
         </div>
@@ -18,6 +18,9 @@ export default defineComponent({
         title: {
             type: String,
             required: true,
+        },
+        image: {
+            type: String,
         },
     },
 });
