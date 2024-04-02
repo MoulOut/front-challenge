@@ -11,7 +11,14 @@
                 :author="book.author"
                 :title="book.title"
                 :price="book.price"
-            />
+                ><template v-slot:img>
+                    <img
+                        :src="require(`@/assets/images/${book.title}.svg`)"
+                        alt=""
+                        class="book-image"
+                    />
+                </template>
+            </BookCard>
         </ul>
     </section>
 </template>
@@ -26,8 +33,6 @@ export default defineComponent({
     components: { BookCard },
     setup() {
         const store = useStore();
-
-        console.log(store.state.books);
 
         return {
             books: store.state.books || [],
@@ -61,6 +66,16 @@ export default defineComponent({
     text-decoration: none;
     color: var(--black);
     font-weight: 600;
+}
+
+.book-image {
+    position: absolute;
+    width: 75%;
+    height: 100%;
+    border-top-left-radius: 2em;
+    border-bottom-right-radius: 2em;
+    top: -50%;
+    left: 15%;
 }
 
 @media screen and (min-width: 768px) {
