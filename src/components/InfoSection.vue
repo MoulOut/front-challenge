@@ -81,7 +81,7 @@ export default defineComponent({
 }
 
 .box-image {
-    border-radius: 0.5em;
+    border-radius: 1em;
     padding: 0.5em;
     margin-bottom: 1em;
     width: 60px;

@@ -1,21 +1,21 @@
 <template>
-    <MobileLayout v-if="pageWidth" />
-    <DesktopLayout v-else />
+    <MobileHome v-if="mobile" />
+    <DesktopHome v-else />
 </template>
 
 <script lang="ts">
-import MobileLayout from '@/layouts/mobile/MobileLayout.vue';
-import DesktopLayout from '@/layouts/desktop/DesktopLayout.vue';
+import MobileHome from '@/layouts/mobile/MobileHome.vue';
+import DesktopHome from '@/layouts/desktop/DesktopHome.vue';
 import { computed } from 'vue';
 
 export default {
     name: 'HomeView',
     components: {
-        MobileLayout,
-        DesktopLayout,
+        MobileHome,
+        DesktopHome,
     },
     setup() {
-        const pageWidth = computed(() => {
+        const mobile = computed(() => {
             if (window.innerWidth < 768) {
                 return true;
             } else {
@@ -24,7 +24,7 @@ export default {
         });
 
         return {
-            pageWidth,
+            mobile,
         };
     },
 };
