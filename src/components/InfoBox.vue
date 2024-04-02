@@ -1,6 +1,6 @@
 <template>
     <li class="info-box">
-        <img src="" alt="" class="box-image" />
+        <slot name="img" />
         <p class="box-description">{{ description }}</p>
     </li>
 </template>
@@ -26,14 +26,8 @@ export default defineComponent({
     text-align: center;
 }
 
-p{
+p {
     font-weight: 500;
 }
 
-.box-image {
-    border: 4px ridge v-bind(color);
-    border-radius: 0.5em;
-    padding: 2em;
-    margin-bottom: 1em;
-}
 </style>
