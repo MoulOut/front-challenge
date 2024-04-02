@@ -4,7 +4,9 @@
         <div class="categorie-content">
             <img :src="image" alt="" class="categorie-image" />
             <p class="categorie-title">{{ title }}</p>
-            <a href="#" class="categorie-article">More ></a>
+            <RouterLink to="/bookstore" class="categorie-article"
+                >More ></RouterLink
+            >
         </div>
     </li>
 </template>

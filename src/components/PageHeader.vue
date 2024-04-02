@@ -25,8 +25,22 @@
                     src="@/assets/images/menu-hamburguer.png"
                     alt="menu"
                     class="hamburguer"
+                    @click="activateMenu()"
                 />
             </div>
+            <nav
+                class="menu"
+                :class="{ disabled: !menuActive }"
+                @click="activateMenu"
+            >
+                <RouterLink class="menu-links" to="/">Home</RouterLink>
+
+                <RouterLink class="menu-links" to="/bookstore"
+                    >Bookstore</RouterLink
+                >
+
+                <RouterLink class="menu-links" to="/about">About Us</RouterLink>
+            </nav>
         </div>
     </header>
 </template>
@@ -36,6 +50,16 @@ import { defineComponent } from 'vue';
 
 export default defineComponent({
     name: 'PageHeader',
+    data() {
+        return {
+            menuActive: false,
+        };
+    },
+    methods: {
+        activateMenu() {
+            return (this.menuActive = !this.menuActive);
+        },
+    },
 });
 </script>
 
@@ -117,12 +141,42 @@ export default defineComponent({
     border-bottom: 2px solid var(--blue);
 }
 
+.menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 60vw;
+    top: 0;
+    right: 0;
+    background-color: var(--black);
+    height: 100vh;
+}
+
+.menu-links {
+    margin-top: 0.5em;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    color: var(--white);
+    opacity: 1;
+}
+
+.menu-links.router-link-active {
+    color: black;
+    font-weight: 500;
+    border-bottom: 3px solid var(--blue);
+    background-color: var(--background);
+}
+
+.disabled {
+    display: none;
+}
+
 @media screen and (min-width: 768px) {
     .header {
         background-color: var(--background);
     }
 
-    .header__login{
+    .header__login {
         display: block;
     }
 
@@ -139,6 +193,10 @@ export default defineComponent({
     }
 
     .hamburguer {
+        display: none;
+    }
+
+    .menu {
         display: none;
     }
 }

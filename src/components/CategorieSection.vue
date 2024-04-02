@@ -10,7 +10,9 @@
                 <h2 class="section__card-title">
                     Categories suggested for you
                 </h2>
-                <a href="#" class="section__card-article"> More > </a>
+                <RouterLink to="/bookstore" class="section__card-article">
+                    More >
+                </RouterLink>
             </div>
             <ul class="section__card-categories">
                 <CategorieCard title="Best Sellers" />

@@ -2,7 +2,9 @@
     <section class="content__section">
         <div class="section__header">
             <h2 class="section__title">Our Favorite Books</h2>
-            <a href="#" class="section__article"> More > </a>
+            <RouterLink to="/bookstore" class="section__article">
+                More >
+            </RouterLink>
         </div>
         <ul class="books">
             <BookCard

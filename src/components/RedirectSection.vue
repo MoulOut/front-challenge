@@ -16,7 +16,9 @@
                     Tell me, which <strong>book</strong> has your heart right
                     now?
                 </h2>
-                <a href="#" class="section__card-article"> Pick your book </a>
+                <RouterLink to="/bookstore" class="section__card-article">
+                    Pick your book
+                </RouterLink>
             </div>
         </div>
     </section>
