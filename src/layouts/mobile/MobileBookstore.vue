@@ -1,45 +1,48 @@
 <template>
-    <PageContent>
+    <PageContent class="content">
         <template v-slot:content__inner>
-            <section class="bookstore">
-                <h2 class="bookstore__title">MoulBooks collections</h2>
-                <span class="bookstore__subtitle">
-                    <RouterLink class="subtitle__links" to="/">Home</RouterLink>
-                    >
-                    <RouterLink class="subtitle__links" to="/bookstore"
-                        >Bookstore</RouterLink
-                    >
-                </span>
-            </section>
+            <BookstoreHead :on-filter="filterBooks" />
+            <SaleSection :books="books" title="Best selling fiction books" />
+            <SaleSection
+                :books="books.toReversed()"
+                title="Best selling Non-fiction books"
+            />
         </template>
     </PageContent>
 </template>
 
 <script lang="ts">
+import BookstoreHead from '@/components/BookstoreHead.vue';
+import SaleSection from '@/components/SaleSection.vue';
 import PageContent from '@/components/PageContent.vue';
-import { defineComponent } from 'vue';
+import { useStore } from '@/store';
+import { computed, defineComponent } from 'vue';
 
 export default defineComponent({
     name: 'MobileBookstore',
-    components: { PageContent },
+    components: { PageContent, BookstoreHead, SaleSection },
+    setup() {
+        const store = useStore();
+        const books = filterBooks('');
+        function filterBooks(filter: string) {
+            return computed(() =>
+                store.state.books.filter(
+                    (book) => !filter || book.title.includes(filter)
+                )
+            );
+        }
+
+        return {
+            books,
+            filterBooks,
+        };
+    },
 });
 </script>
 
-<style>
-.bookstore {
-    background-color: var(--background);
-    height: 50vh;
+<style scoped>
+.content {
     padding: 2em;
-}
-
-.bookstore__title {
-    font-weight: 500;
-    font-size: 18px;
-    margin-bottom: 0.5em;
-}
-
-.subtitle__links {
-    text-decoration: none;
-    color: var(--black);
+    background-color: var(--background);
 }
 </style>
