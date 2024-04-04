@@ -29,3 +29,9 @@ export default defineComponent({
     },
 });
 </script>
+
+<style scoped>
+.book{
+    background-color: var(--background)
+}
+</style>
