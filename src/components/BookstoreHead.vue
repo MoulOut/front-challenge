@@ -17,12 +17,6 @@
                 <option value="">Higher price</option>
             </select>
         </div>
-        <input
-            type="search"
-            class="book-search"
-            placeholder="Find your book here"
-            v-model="filter"
-        />
     </section>
 </template>
 
@@ -66,15 +60,5 @@ export default defineComponent({
     background-color: var(--background);
     border: none;
     border-bottom: 1px solid black;
-}
-
-.book-search {
-    margin-top: 1em;
-    display: block;
-    padding: 1em;
-    background-color: transparent;
-    border: 1px solid var(--black);
-    border-radius: 1em;
-    width: 100%;
 }
 </style>

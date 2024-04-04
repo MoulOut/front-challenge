@@ -1,8 +1,6 @@
 <template>
     <section class="book">
-        <div class="book__head">
-            <h2>MoulBooks sollections</h2>
-        </div>
+        <BookstoreHead />
         <div class="book__content">
             <img
                 :src="require(`@/assets/images/${book.title}.svg`)"
@@ -21,17 +19,22 @@
 <script lang="ts">
 import { defineComponent, PropType } from 'vue';
 import { IBook } from '../../interfaces/book';
+import BookstoreHead from '@/components/BookstoreHead.vue';
 
 export default defineComponent({
     name: 'MobileBookView',
     props: {
         book: { type: {} as PropType<IBook>, required: true },
     },
+    components: {
+        BookstoreHead,
+    },
 });
 </script>
 
 <style scoped>
-.book{
-    background-color: var(--background)
+.book {
+    background-color: var(--background);
+    padding: 2em;
 }
 </style>

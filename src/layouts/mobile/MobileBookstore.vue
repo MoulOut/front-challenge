@@ -2,6 +2,12 @@
     <PageContent class="content">
         <template v-slot:content__inner>
             <BookstoreHead />
+            <input
+                type="search"
+                class="book-search"
+                placeholder="Find your book here"
+                v-model="filter"
+            />
             <SaleSection :books="books" title="Best selling fiction books" />
             <SaleSection
                 :books="books.toReversed()"
@@ -17,7 +23,7 @@ import BookstoreHead from '@/components/BookstoreHead.vue';
 import SaleSection from '@/components/SaleSection.vue';
 import PageContent from '@/components/PageContent.vue';
 import { useStore } from '@/store';
-import { computed, defineComponent } from 'vue';
+import { computed, defineComponent, ref } from 'vue';
 import SubSection from '@/components/SubSection.vue';
 
 export default defineComponent({
@@ -25,9 +31,17 @@ export default defineComponent({
     components: { PageContent, BookstoreHead, SaleSection, SubSection },
     setup() {
         const store = useStore();
+        const filter = ref('');
+
+        const books = computed(() =>
+            store.state.books.filter(
+                (book) => !filter.value || book.title.includes(filter.value)
+            )
+        );
 
         return {
-            books: computed(() => store.state.books),
+            books,
+            filter,
         };
     },
 });
@@ -37,5 +51,15 @@ export default defineComponent({
 .content {
     padding: 2em;
     background-color: var(--background);
+}
+
+.book-search {
+    margin-top: 1em;
+    display: block;
+    padding: 1em;
+    background-color: transparent;
+    border: 1px solid var(--black);
+    border-radius: 1em;
+    width: 100%;
 }
 </style>
