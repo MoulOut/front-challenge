@@ -12,7 +12,7 @@
                 <div class="book__information">
                     <h2 class="book-title">{{ book.title }}</h2>
                     <p class="book-author">By {{ book.author }}</p>
-                    <p class="book-price">{{ book.price }}</p>
+                    <p class="book-price">$ {{ book.price }}</p>
                     <p class="book-quantity">
                         Available in Stock:{{ book.availableStock }}
                     </p>
@@ -21,14 +21,7 @@
                         Donec rhoncus dignissim nunc sed molestie. Morbi ac
                         porta nulla, vitae egestas est. Cras gravida urna non
                         augue tristique interdum. Nunc hendrerit nibh dui, quis
-                        pulvinar justo dictum tempor. Donec a lacinia est. Fusce
-                        blandit vitae turpis rutrum finibus. Curabitur pretium
-                        at massa vel efficitur. Nullam et nibh mollis, mattis
-                        urna nec, gravida orci. Vestibulum nec faucibus lacus,
-                        sed ullamcorper arcu. In sem ipsum, pellentesque sed
-                        vulputate a, laoreet at enim. In malesuada porttitor
-                        magna eget tempus. Nam vehicula mattis risus, id
-                        bibendum dolor dignissim eget. Donec sed dolor dolor.
+                        pulvinar justo dictum tempor.
                     </p>
                     <button class="book-buy">Buy Now</button>
                 </div>
@@ -74,9 +67,17 @@ export default defineComponent({
 }
 
 .book-image {
-    width: 40%;
+    width: 35%;
     border-radius: 2em;
-    box-shadow: 3px 3px black
+    box-shadow: 3px 3px black;
+    height: 100%;
+    margin-right: 10px;
+}
+
+.book-information{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .book-title {
@@ -88,7 +89,7 @@ export default defineComponent({
     color: var(--black);
 }
 
-.book-description{
+.book-description {
     font-size: 12px;
 }
 
