@@ -13,9 +13,7 @@
                     <h2 class="book-title">{{ book.title }}</h2>
                     <p class="book-author">By {{ book.author }}</p>
                     <p class="book-price">$ {{ book.price }}</p>
-                    <p class="book-quantity">
-                        Available in Stock:{{ book.availableStock }}
-                    </p>
+                    <p class="book-stock">In Stock:{{ book.availableStock }}</p>
                     <p class="book-description">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         Donec rhoncus dignissim nunc sed molestie. Morbi ac
@@ -59,25 +57,33 @@ export default defineComponent({
 .link-back {
     font-weight: 500;
     text-decoration: none;
-    color: var(--black);
+    color: black;
 }
 
 .content__info {
     display: flex;
+    margin-top: 1em;
 }
 
 .book-image {
     width: 35%;
     border-radius: 2em;
-    box-shadow: 3px 3px black;
+    box-shadow: 8px 8px black;
     height: 100%;
-    margin-right: 10px;
+    margin-right: 1em;
 }
 
-.book-information{
+.book-information {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+}
+
+.book-title,
+.book-author,
+.book-description,
+.book-price,
+.book-stock {
+    margin-bottom: 1em;
 }
 
 .book-title {
