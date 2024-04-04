@@ -48,7 +48,7 @@ export default defineComponent({
 }
 
 .inner__title {
-    font-weight: 500;
+    font-weight: 600;
     font-size: 18px;
     margin-bottom: 0.5em;
 }
