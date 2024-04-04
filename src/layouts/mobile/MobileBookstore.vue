@@ -1,7 +1,7 @@
 <template>
     <PageContent class="content">
         <template v-slot:content__inner>
-            <BookstoreHead :on-filter="filterBooks" />
+            <BookstoreHead />
             <SaleSection :books="books" title="Best selling fiction books" />
             <SaleSection
                 :books="books.toReversed()"
@@ -9,6 +9,7 @@
             />
         </template>
     </PageContent>
+    <SubSection />
 </template>
 
 <script lang="ts">
@@ -17,24 +18,16 @@ import SaleSection from '@/components/SaleSection.vue';
 import PageContent from '@/components/PageContent.vue';
 import { useStore } from '@/store';
 import { computed, defineComponent } from 'vue';
+import SubSection from '@/components/SubSection.vue';
 
 export default defineComponent({
     name: 'MobileBookstore',
-    components: { PageContent, BookstoreHead, SaleSection },
+    components: { PageContent, BookstoreHead, SaleSection, SubSection },
     setup() {
         const store = useStore();
-        const books = filterBooks('');
-        function filterBooks(filter: string) {
-            return computed(() =>
-                store.state.books.filter(
-                    (book) => !filter || book.title.includes(filter)
-                )
-            );
-        }
 
         return {
-            books,
-            filterBooks,
+            books: computed(() => store.state.books),
         };
     },
 });
