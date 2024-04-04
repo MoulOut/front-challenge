@@ -12,13 +12,8 @@ export default defineComponent({
     name: 'BookStore',
     components: { MobileBookstore, DesktopBookstore },
     setup() {
-        const mobile = computed(() => {
-            if (window.innerWidth < 768) {
-                return true;
-            } else {
-                return false;
-            }
-        });
+        const deviceWidth = computed(()=> window.innerWidth)
+        const mobile = computed(() => deviceWidth.value < 768);
 
         return {
             mobile,
