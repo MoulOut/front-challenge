@@ -2,7 +2,7 @@
     <section class="book">
         <BookstoreHead />
         <div class="book__content">
-            <RouterLink class="link-back" to="/bookstore">< Back</RouterLink>
+            <RouterLink class="link-back" to="/bookstore">Back</RouterLink>
             <div class="content__info">
                 <img
                     :src="require(`@/assets/images/${book.title}.svg`)"
