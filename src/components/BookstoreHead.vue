@@ -6,9 +6,7 @@
                 <p class="inner__subtitle">
                     <RouterLink class="subtitle__links" to="/">Home</RouterLink>
                     >
-                    <RouterLink class="subtitle__links" to="/bookstore"
-                        >Bookstore</RouterLink
-                    >
+                    <RouterLink class="subtitle__links" to="/bookstore">Bookstore</RouterLink>
                 </p>
             </div>
             <select class="selector">
@@ -36,6 +34,11 @@ export default defineComponent({
 </script>
 
 <style>
+.bookstore {
+    display: flex;
+    flex-direction: column;
+}
+
 .bookstore__inner {
     display: flex;
     justify-content: space-between;

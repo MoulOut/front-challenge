@@ -1,6 +1,7 @@
 <template>
     <section class="book">
         <BookstoreHead />
+        <RouterLink class="link-back" to="/bookstore">Back</RouterLink>
         <div class="book__content">
             <BookInfo :book="book" />
         </div>
@@ -32,5 +33,12 @@ export default defineComponent({
 
 .book__content {
     margin-top: 1em;
+}
+
+.link-back {
+    margin-top: 1em;
+    font-weight: 500;
+    text-decoration: none;
+    color: black;
 }
 </style>

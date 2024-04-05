@@ -8,13 +8,14 @@ import { useStore } from '@/store';
 import { computed, defineComponent, ref } from 'vue';
 import { IBook } from '@/interfaces/book';
 import MobileBookView from '@/layouts/mobile/MobileBookView.vue';
+import DesktopBookView from '@/layouts/desktop/DesktopBookView.vue';
 
 export default defineComponent({
     name: 'BookView',
     props: {
         id: { type: String, required: true },
     },
-    components: { MobileBookView },
+    components: { MobileBookView, DesktopBookView },
     setup(props) {
         const store = useStore();
         const book = ref({} as IBook);
