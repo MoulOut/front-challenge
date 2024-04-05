@@ -27,6 +27,8 @@ export default defineComponent({
 
 <style scoped>
 .book {
+    display: flex;
+    flex-direction: column;
     background-color: var(--background);
     padding: 2em;
 }

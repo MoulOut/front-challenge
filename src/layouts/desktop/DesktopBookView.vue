@@ -3,7 +3,8 @@
         <BookstoreHead />
         <RouterLink class="link-back" to="/bookstore">Back</RouterLink>
         <div class="book__content">
-            <BookInfo :book="book" />
+            <BookInfo :book="book"></BookInfo>
+            
         </div>
     </section>
 </template>
@@ -27,6 +28,8 @@ export default defineComponent({
 
 <style scoped>
 .book {
+    display: flex;
+    flex-direction: column;
     background-color: var(--background);
     padding: 2em;
 }
