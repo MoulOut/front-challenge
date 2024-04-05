@@ -5,7 +5,10 @@
         <div class="book-content">
             <h4 class="book-title">{{ book.title }}</h4>
             <p class="book-author">By {{ book.author }}</p>
-            <p class="book-price">$ {{ book.price }}</p>
+            <div class="book-rp">
+                <p class="book-rate"><img src="@/assets/images/Star 9.svg" alt="" class="rate-star"> 4.3</p>
+                <p class="book-price">${{ book.price }}</p>
+            </div>
             <RouterLink :to="`/bookstore/${book.id}`" class="book-link">Buy Now</RouterLink>
         </div>
     </li>
@@ -77,8 +80,18 @@ export default defineComponent({
     align-self: center;
 }
 
+.book-rp {
+    display: flex;
+    justify-content: space-between;
+}
+
+.rate-star {
+    transform: rotate(45deg);
+    width: 15px;
+}
+
 .book-price {
-    text-align: end;
+    align-self: end;
 }
 
 .book-link:hover {
@@ -94,8 +107,13 @@ export default defineComponent({
         font-size: 18px;
     }
 
+    .rate-star{
+        width:20px;
+    }
+
     .book-author,
-    .book-price {
+    .book-price,
+    .book-rate {
         font-size: 16px;
     }
 

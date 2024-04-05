@@ -5,8 +5,8 @@
         <div class="book__information">
             <h2 class="book-title">{{ book.title }}</h2>
             <p class="book-author">By {{ book.author }}</p>
-            <p class="book-price">$ {{ book.price }}</p>
-            <p class="book-stock">In Stock:{{ book.availableStock }}</p>
+            <p class="book-price">${{ book.price }}</p>
+            <p class="book-stock">In Stock: {{ book.availableStock }}</p>
             <p class="book-description">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Donec rhoncus dignissim nunc sed molestie. Morbi ac
@@ -109,7 +109,12 @@ export default defineComponent({
     border-radius: 0.5em;
     border: 1px solid black;
     box-shadow: 2px 2px black;
-    font-weight: 500;
+    font-weight: 600;
+}
+
+.book-buy:hover {
+    background-color: var(--light-blue);
+    cursor: pointer;
 }
 
 .book-report {
@@ -141,5 +146,11 @@ export default defineComponent({
     text-align: center;
     font-size: 12px;
     width: 60%;
+}
+
+@media screen and (min-width: 768px){
+    .book__information{
+        width: 30%;
+    }
 }
 </style>

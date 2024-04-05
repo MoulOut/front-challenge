@@ -84,7 +84,7 @@ p {
 }
 
 .rate-star {
-    transform: rotate(40deg);
+    transform: rotate(45deg);
     width: 15px;
 }
 
