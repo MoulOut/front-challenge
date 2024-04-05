@@ -10,7 +10,10 @@
                         class="book-image" />
                 </RouterLink>
                 <p class="book-title">{{ book.title }}</p>
-                <p class="book-">${{ book.price }}</p>
+                <div class="book-rp">
+                    <p class="book-rate"><img src="@/assets/images/Star 9.svg" alt="" class="rate-star"> 4.3</p>
+                    <p class="book-price">${{ book.price }}</p>
+                </div>
                 <RouterLink class="book-button" :to="`/bookstore/${book.id}`">Show Details</RouterLink>
             </SwiperSlide>
         </Swiper>
@@ -73,6 +76,20 @@ p {
 .book-title {
     align-self: center;
     font-weight: 500;
+}
+
+.book-rp {
+    display: flex;
+    justify-content: space-between;
+}
+
+.rate-star {
+    transform: rotate(40deg);
+    width: 15px;
+}
+
+.book-price {
+    align-self: end;
 }
 
 .book-button {
