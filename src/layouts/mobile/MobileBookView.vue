@@ -67,7 +67,7 @@ export default defineComponent({
 
 .book-image {
     width: 35%;
-    border-radius: 2em;
+    border-radius: 1em;
     box-shadow: 8px 8px black;
     height: 100%;
     margin-right: 1em;

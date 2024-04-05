@@ -2,6 +2,7 @@ import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router';
 import HomeView from '../views/HomeView.vue';
 import BookStore from '@/views/bookstore/BookStore.vue';
 import BookView from '../views/bookstore/BookView.vue';
+import AboutView from '@/views/AboutView.vue';
 
 const routes: Array<RouteRecordRaw> = [
     {
@@ -28,8 +29,7 @@ const routes: Array<RouteRecordRaw> = [
     {
         path: '/about',
         name: 'about',
-        component: () =>
-            import(/* webpackChunkName: "about" */ '../views/AboutView.vue'),
+        component: AboutView,
     },
 ];
 

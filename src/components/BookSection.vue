@@ -7,18 +7,8 @@
             </RouterLink>
         </div>
         <ul class="books">
-            <BookCard
-                v-for="book in books"
-                :key="book.id"
-                :author="book.author"
-                :title="book.title"
-                :price="book.price"
-                ><template v-slot:img>
-                    <img
-                        :src="require(`@/assets/images/${book.title}.svg`)"
-                        alt=""
-                        class="book-image"
-                    />
+            <BookCard v-for="book in books.slice(0, booksToShow)" :key="book.id" :book="book"><template v-slot:img>
+                    <img :src="require(`@/assets/images/${book.title}.svg`)" alt="" class="book-image" />
                 </template>
             </BookCard>
         </ul>
@@ -26,7 +16,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { computed, defineComponent } from 'vue';
 import BookCard from '@/components/BookCard.vue';
 import { useStore } from '@/store';
 
@@ -35,9 +25,13 @@ export default defineComponent({
     components: { BookCard },
     setup() {
         const store = useStore();
-
+        const booksToShow = computed(() => {
+            if (window.innerWidth < 768) return 3;
+            return 4;
+        })
         return {
             books: store.state.books || [],
+            booksToShow,
         };
     },
 });
@@ -72,11 +66,11 @@ export default defineComponent({
 
 .book-image {
     position: absolute;
-    width: 75%;
+    width: 72%;
     height: 100%;
     border-top-left-radius: 2em;
     border-bottom-right-radius: 2em;
-    top: -50%;
+    top: -45%;
     left: 15%;
 }
 

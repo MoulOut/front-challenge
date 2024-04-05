@@ -3,32 +3,24 @@
         <div class="book-colorblock"></div>
         <slot name="img" />
         <div class="book-content">
-            <h4 class="book-title">{{ title }}</h4>
-            <p class="book-author">By {{ author }}</p>
-            <p class="book-price">$ {{ price }}</p>
-            <a href="#" class="book-article">Buy Now</a>
+            <h4 class="book-title">{{ book.title }}</h4>
+            <p class="book-author">By {{ book.author }}</p>
+            <p class="book-price">$ {{ book.price }}</p>
+            <RouterLink :to="`/bookstore/${book.id}`" class="book-link">Buy Now</RouterLink>
         </div>
     </li>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { IBook } from '@/interfaces/book';
+import { PropType, defineComponent } from 'vue';
 
 export default defineComponent({
     name: 'BookCard',
     props: {
-        title: {
-            type: String,
-        },
-        author: {
-            type: String,
-        },
-        price: {
-            type: Number,
-        },
-        image: {
-            type: String,
-        },
+        book: {
+            type: {} as PropType<IBook>, required: true
+        }
     },
 });
 </script>
@@ -43,7 +35,7 @@ export default defineComponent({
     border-radius: 1.5em;
     background-color: var(--white);
     margin-top: 15%;
-    height: 35vh;
+    height: 38vmax;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -59,7 +51,7 @@ export default defineComponent({
 }
 
 .book-content {
-    padding: 1em 2em;
+    padding: 1em;
     display: flex;
     flex-direction: column;
     height: 45%;
@@ -71,7 +63,7 @@ export default defineComponent({
     padding: 0.5em 0;
 }
 
-.book-article {
+.book-link {
     font-weight: 500;
     text-decoration: none;
     background-color: var(--yellow);
@@ -89,7 +81,7 @@ export default defineComponent({
     text-align: end;
 }
 
-.book-article:hover {
+.book-link:hover {
     background-color: var(--light-blue);
 }
 

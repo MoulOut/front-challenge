@@ -2,20 +2,16 @@
     <section class="sale">
         <div class="sale__titles">
             <h2>{{ title }}</h2>
-            >
         </div>
-        <Swiper :slides-per-view="1" :space-between="10" :width="150" :zoom="true">
+        <Swiper :slides-per-view="1" :space-between="10" :width="180" :zoom="true">
             <SwiperSlide class="slide" v-for="book in books" :key="book.id">
-                <img
-                    :src="require(`@/assets/images/${book.title}.svg`)"
-                    :alt="`image of the book ${book.title}`"
-                    class="book-image"
-                />
+                <RouterLink :to="`/bookstore/${book.id}`">
+                    <img :src="require(`@/assets/images/${book.title}.svg`)" :alt="`image of the book ${book.title}`"
+                        class="book-image" />
+                </RouterLink>
                 <p class="book-title">{{ book.title }}</p>
                 <p class="book-">${{ book.price }}</p>
-                <RouterLink class="book-button" :to="`/bookstore/${book.id}`"
-                    >Show Details</RouterLink
-                >
+                <RouterLink class="book-button" :to="`/bookstore/${book.id}`">Show Details</RouterLink>
             </SwiperSlide>
         </Swiper>
     </section>
@@ -63,13 +59,18 @@ export default defineComponent({
 }
 
 .book-image {
-    width: 150px;
+    width: 100%;
     border-top-left-radius: 2em;
     border-bottom-right-radius: 2em;
     border: 1px solid black;
+    height: 100%;
 }
 
-.book-title{
+p {
+    margin-top: 0.5em
+}
+
+.book-title {
     align-self: center;
     font-weight: 500;
 }
@@ -77,12 +78,16 @@ export default defineComponent({
 .book-button {
     text-decoration: none;
     color: black;
-    padding: 1em;
+    padding: 0.5em 1em;
     background-color: var(--yellow);
     border: 1px solid black;
-    border-radius: 1em;
+    border-radius: 0.5em;
     box-shadow: 2px 2px black;
-    font-weight: 500
+    font-weight: 500;
+    margin-top: 0.5em;
+    text-align: center;
+    width: 60%;
+    align-self: center;
 }
 
 .book-button:hover {
