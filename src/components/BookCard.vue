@@ -101,14 +101,15 @@ export default defineComponent({
 @media screen and (min-width: 768px) {
     .book {
         justify-content: space-between;
+        width: 22%;
     }
 
     .book-title {
         font-size: 18px;
     }
 
-    .rate-star{
-        width:20px;
+    .rate-star {
+        width: 20px;
     }
 
     .book-author,
