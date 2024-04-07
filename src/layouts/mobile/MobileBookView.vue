@@ -9,28 +9,20 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent } from 'vue';
+import { defineComponent, PropType } from 'vue';
 import BookstoreHead from '@/components/BookstoreHead.vue';
 import BookInfo from '@/components/BookInfo.vue';
-import { useStore } from '@/store';
-import { GET_BOOK } from '@/store/type-actions';
+
+import { IBook } from '@/interfaces/book';
 
 export default defineComponent({
     name: 'MobileBookView',
     components: {
         BookstoreHead, BookInfo
     },
-    setup() {
-        const store = useStore();
-        const bookId = Number(window.location.hash.split('/')[2]);
-        store.dispatch(GET_BOOK, bookId).then(() => console.log(store.state.book));
-        
-        const book = computed(()=> store.state.book);
-
-        return {
-            book
-        }
-    }
+    props: {
+        book: { type: {} as PropType<IBook>, required: true }
+    },  
 });
 </script>
 

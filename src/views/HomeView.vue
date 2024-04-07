@@ -6,7 +6,6 @@
 <script lang="ts">
 import MobileHome from '@/layouts/mobile/MobileHome.vue';
 import DesktopHome from '@/layouts/desktop/DesktopHome.vue';
-import { computed } from 'vue';
 
 export default {
     name: 'HomeView',
@@ -16,7 +15,7 @@ export default {
     },
     setup() {
         const deviceWidth = window.innerWidth
-        const mobile = computed(() => deviceWidth < 768);
+        const mobile =  deviceWidth < 768;
 
         return {
             mobile,
