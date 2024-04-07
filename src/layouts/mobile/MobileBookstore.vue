@@ -2,17 +2,10 @@
     <PageContent class="content">
         <template v-slot:content__inner>
             <BookstoreHead />
-            <input
-                type="search"
-                class="book-search"
-                placeholder="Find your book here"
-                v-model="filter"
-            />
+            <input type="search" class="book-search" placeholder="Find your book here" v-model="filter"
+                id="book-search" />
             <SaleSection :books="books" title="Best selling fiction books" />
-            <SaleSection
-                :books="books.toReversed()"
-                title="Best selling Non-fiction books"
-            />
+            <SaleSection :books="books.toReversed()" title="Best selling Non-fiction books" />
         </template>
     </PageContent>
     <SubSection />
@@ -25,19 +18,21 @@ import PageContent from '@/components/PageContent.vue';
 import { useStore } from '@/store';
 import { computed, defineComponent, ref } from 'vue';
 import SubSection from '@/components/SubSection.vue';
+import { GET_BOOKS } from '@/store/type-actions';
 
 export default defineComponent({
     name: 'MobileBookstore',
     components: { PageContent, BookstoreHead, SaleSection, SubSection },
     setup() {
         const store = useStore();
+        store.dispatch(GET_BOOKS).then();
         const filter = ref('');
 
         const books = computed(() =>
             store.state.books.filter(
                 (book) => !filter.value || book.title.includes(filter.value)
             )
-        );
+        )
 
         return {
             books,

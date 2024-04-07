@@ -15,8 +15,8 @@ export default {
         DesktopHome,
     },
     setup() {
-        const deviceWidth = computed(()=> window.innerWidth)
-        const mobile = computed(() => deviceWidth.value < 768);
+        const deviceWidth = window.innerWidth
+        const mobile = computed(() => deviceWidth < 768);
 
         return {
             mobile,

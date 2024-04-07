@@ -1,7 +1,7 @@
 import axios, { AxiosInstance } from "axios";
 
 const clientHttp: AxiosInstance = axios.create({
-  baseURL: "http://localhost:8000",
+  baseURL: "https://circle-frontend-challenge.onrender.com",
 });
 
 export default clientHttp;

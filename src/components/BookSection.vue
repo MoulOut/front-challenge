@@ -16,21 +16,23 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent } from 'vue';
+import { computed, defineComponent, ref } from 'vue';
 import BookCard from '@/components/BookCard.vue';
 import { useStore } from '@/store';
+import { GET_BOOKS } from '@/store/type-actions';
+import { IBook } from '@/interfaces/book';
 
 export default defineComponent({
     name: 'BookSection',
     components: { BookCard },
     setup() {
         const store = useStore();
-        const booksToShow = computed(() => {
-            if (window.innerWidth < 768) return 3;
-            return 4;
-        })
+        const books = ref([] as IBook[]);
+        store.dispatch(GET_BOOKS).then(() => books.value = store.state.books);
+        const booksToShow = computed(() => window.innerWidth < 768 ? 3 : 4)
+
         return {
-            books: store.state.books || [],
+            books,
             booksToShow,
         };
     },

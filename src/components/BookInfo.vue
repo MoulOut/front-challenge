@@ -51,11 +51,11 @@ export default defineComponent({
     name: 'BookInfo',
     props: {
         book: {
-            type: {} as PropType<IBook>,
-            required: true
+            type: {} as PropType<IBook>, required: true
         }
     }
-})
+
+});
 </script>
 
 <style scoped>
@@ -148,8 +148,8 @@ export default defineComponent({
     width: 60%;
 }
 
-@media screen and (min-width: 768px){
-    .book__information{
+@media screen and (min-width: 768px) {
+    .book__information {
         width: 30%;
     }
 }

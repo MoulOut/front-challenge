@@ -3,25 +3,34 @@
         <BookstoreHead />
         <RouterLink class="link-back" to="/bookstore">Back</RouterLink>
         <div class="book__content">
-            <BookInfo :book="book" />
+            <BookInfo :book="book"/>
         </div>
     </section>
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from 'vue';
-import { IBook } from '../../interfaces/book';
+import { computed, defineComponent } from 'vue';
 import BookstoreHead from '@/components/BookstoreHead.vue';
 import BookInfo from '@/components/BookInfo.vue';
+import { useStore } from '@/store';
+import { GET_BOOK } from '@/store/type-actions';
 
 export default defineComponent({
     name: 'MobileBookView',
-    props: {
-        book: { type: {} as PropType<IBook>, required: true },
-    },
     components: {
         BookstoreHead, BookInfo
     },
+    setup() {
+        const store = useStore();
+        const bookId = Number(window.location.hash.split('/')[2]);
+        store.dispatch(GET_BOOK, bookId).then(() => console.log(store.state.book));
+        
+        const book = computed(()=> store.state.book);
+
+        return {
+            book
+        }
+    }
 });
 </script>
 

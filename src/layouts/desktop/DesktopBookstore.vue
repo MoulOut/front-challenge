@@ -2,17 +2,10 @@
     <PageContent class="content">
         <template v-slot:content__inner>
             <BookstoreHead />
-            <input
-                type="search"
-                class="book-search"
-                placeholder="Find your book here"
-                v-model="filter"
-            />
+            <input type="search" class="book-search" placeholder="Find your book here" v-model="filter"
+                id="book-search" />
             <SaleSection :books="books" title="Best selling fiction books" />
-            <SaleSection
-                :books="books.toReversed()"
-                title="Best selling Non-fiction books"
-            />
+            <SaleSection :books="books.toReversed()" title="Best selling Non-fiction books" />
         </template>
     </PageContent>
     <SubSection />
@@ -24,13 +17,15 @@ import PageContent from '@/components/PageContent.vue';
 import SaleSection from '@/components/SaleSection.vue';
 import SubSection from '@/components/SubSection.vue';
 import { useStore } from '@/store';
-import { defineComponent, ref ,computed } from 'vue';
+import { GET_BOOKS } from '@/store/type-actions';
+import { defineComponent, ref, computed } from 'vue';
 
 export default defineComponent({
     name: 'DesktopBookstore',
     components: { PageContent, BookstoreHead, SaleSection, SubSection },
     setup() {
         const store = useStore();
+        store.dispatch(GET_BOOKS).then();
         const filter = ref('');
 
         const books = computed(() =>
