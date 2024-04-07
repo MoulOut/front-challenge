@@ -1,18 +1,20 @@
 <template>
     <PageHeader />
     <RouterView></RouterView>
-    <PageFooter/>
+    <PageFooter />
+    <Notifications />
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
 import PageHeader from './components/PageHeader.vue';
 import PageFooter from './components/PageFooter.vue';
+import Notifications from './components/Notifications.vue';
 
 export default defineComponent({
     name: 'App',
     components: {
-        PageHeader,PageFooter
+        PageHeader, PageFooter, Notifications
     },
 });
 </script>

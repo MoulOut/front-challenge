@@ -1,35 +1,34 @@
-import { IBook } from "@/interfaces/book";
+import { IBook } from "@/interfaces/IBook";
 import { InjectionKey } from "vue";
 import { createStore, Store, useStore as vuexUseStore } from "vuex";
-import { GET_BOOK, GET_BOOKS } from "./type-actions";
+import { GET_BOOKS } from "./type-actions";
 import httpClient from "@/http";
-import { DEFINE_BOOK, DEFINE_BOOKS } from "./type-mutations";
+import { DEFINE_BOOKS, NOTIFY } from "./type-mutations";
+import { INotification } from "@/interfaces/INotification";
 
 export interface State {
   books: IBook[];
-  book: IBook;
+  notifications: INotification[];
 }
 
 export const storeKey: InjectionKey<Store<State>> = Symbol();
 
 export const store = createStore<State>({
   state: {
+    notifications: [],
     books: [],
-    book: {
-      id: 0,
-      author: "",
-      title: "",
-      availableStock: 0,
-      isbn: "",
-      price: 0,
-    },
   },
   mutations: {
     [DEFINE_BOOKS](state, books: IBook[]) {
       state.books = books;
     },
-    [DEFINE_BOOK](state, book: IBook) {
-      state.book = book;
+    [NOTIFY](state, newNotification: INotification) {
+      newNotification.id = new Date().getTime();
+      state.notifications.push(newNotification);
+
+      setTimeout(() => {
+        state.notifications.pop();
+      }, 300000);
     },
   },
   actions: {
@@ -37,11 +36,6 @@ export const store = createStore<State>({
       return httpClient
         .get("/books")
         .then((response) => commit(DEFINE_BOOKS, response.data.books));
-    },
-    [GET_BOOK]({ commit }, bookId: number) {
-      return httpClient.get(`/books/${bookId}`).then((response) => {
-        return commit(DEFINE_BOOK, response.data.book);
-      });
     },
   },
 });
