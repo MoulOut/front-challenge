@@ -27,7 +27,7 @@ export default defineComponent({
     setup() {
         const { notify } = useNotify()
         function testNotification(){
-            notify('Search Button','Not implemented yet')
+            notify('Search Button','Not implemented yet.')
         }
 
         return {

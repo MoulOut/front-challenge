@@ -39,9 +39,9 @@ export default defineComponent({
 .message {
     background-color: var(--pink);
     border-radius: 0.5em;
-    box-shadow: 2px 2px black;
+    border: 1px solid black;
+    box-shadow: 4px 4px black;
     margin-top: 0.5em;
-    color: var(--black);
 }
 
 .message-header {
@@ -53,5 +53,6 @@ export default defineComponent({
 
 .message-body {
     padding: 1em;
+    background-color: var(--white);
 }
 </style>

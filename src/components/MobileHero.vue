@@ -3,31 +3,33 @@
         <img src="@/assets/images/Star 7.svg" alt="" class="hero-star-top" />
         <h1 class="hero__title">
             Get started with 5000+ classic literature books for free.
-            <img
-                src="@/assets/images/Star 6.svg"
-                alt="estrela"
-                class="hero__title-star"
-            />
+            <img src="@/assets/images/Star 6.svg" alt="estrela" class="hero__title-star" />
         </h1>
         <img src="@/assets/images/Star 6.svg" alt="" class="hero-star-bottom" />
     </section>
     <section class="hero-form">
-        <input
-            type="text"
-            class="hero__filter"
-            id="hero__filter"
-            placeholder="Find your favorite book"
-        />
+        <input type="text" class="hero__filter" id="hero__filter" placeholder="Find your favorite book" />
         <label for="hero__filter"></label>
-        <button class="hero__button">Search</button>
+        <button class="hero__button" @click="testNotification">Search</button>
     </section>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import useNotify from '@/hooks/notifier'
 
 export default defineComponent({
     name: 'PageHero',
+    setup() {
+        const { notify } = useNotify()
+        function testNotification() {
+            notify('Search Button', 'Not implemented yet.')
+        }
+
+        return {
+            testNotification
+        }
+    }
 });
 </script>
 

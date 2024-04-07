@@ -28,7 +28,7 @@ export const store = createStore<State>({
 
       setTimeout(() => {
         state.notifications.pop();
-      }, 300000);
+      }, 3000);
     },
   },
   actions: {
