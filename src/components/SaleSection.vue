@@ -21,7 +21,7 @@
 </template>
 
 <script lang="ts">
-import { IBook } from '@/interfaces/book';
+import { IBook } from '@/interfaces/IBook';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import { defineComponent, PropType } from 'vue';
 

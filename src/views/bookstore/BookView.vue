@@ -7,7 +7,7 @@
 import { computed, defineComponent, ref, watch } from 'vue';
 import MobileBookView from '@/layouts/mobile/MobileBookView.vue';
 import DesktopBookView from '@/layouts/desktop/DesktopBookView.vue';
-import { IBook } from '@/interfaces/book';
+import { IBook } from '@/interfaces/IBook';
 import { useStore } from '@/store';
 import { GET_BOOKS } from '@/store/type-actions';
 

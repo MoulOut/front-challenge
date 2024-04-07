@@ -3,7 +3,7 @@
         <BookstoreHead />
         <RouterLink class="link-back" to="/bookstore">Back</RouterLink>
         <div class="book__content">
-            <BookInfo :book="book"/>
+            <BookInfo :book="book" />
         </div>
     </section>
 </template>
@@ -13,7 +13,7 @@ import { defineComponent, PropType } from 'vue';
 import BookstoreHead from '@/components/BookstoreHead.vue';
 import BookInfo from '@/components/BookInfo.vue';
 
-import { IBook } from '@/interfaces/book';
+import { IBook } from '@/interfaces/IBook';
 
 export default defineComponent({
     name: 'MobileBookView',
@@ -22,7 +22,7 @@ export default defineComponent({
     },
     props: {
         book: { type: {} as PropType<IBook>, required: true }
-    },  
+    },
 });
 </script>
 

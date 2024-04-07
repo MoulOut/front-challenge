@@ -20,7 +20,7 @@ import { computed, defineComponent, ref } from 'vue';
 import BookCard from '@/components/BookCard.vue';
 import { useStore } from '@/store';
 import { GET_BOOKS } from '@/store/type-actions';
-import { IBook } from '@/interfaces/book';
+import { IBook } from '@/interfaces/IBook';
 
 export default defineComponent({
     name: 'BookSection',

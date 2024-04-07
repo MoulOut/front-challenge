@@ -12,7 +12,7 @@
 import { defineComponent, PropType } from 'vue';
 import BookstoreHead from '@/components/BookstoreHead.vue';
 import BookInfo from '@/components/BookInfo.vue';
-import { IBook } from '@/interfaces/book';
+import { IBook } from '@/interfaces/IBook';
 
 export default defineComponent({
     name: 'DekstopBookView',

@@ -9,29 +9,31 @@
                 <b>Grow your wings!</b>
             </p>
             <div class="hero__form">
-                <input
-                    type="text"
-                    class="hero__filter"
-                    id="hero__filter"
-                    placeholder="Find your favorite book"
-                />
+                <input type="text" class="hero__filter" id="hero__filter" placeholder="Find your favorite book" />
                 <label for="hero__filter"></label>
-                <button class="hero__button">Search</button>
+                <button class="hero__button" @click="testNotification()">Search</button>
             </div>
         </div>
-        <img
-            src="@/assets/images/image 28.svg"
-            alt="hero-image"
-            class="hero-image"
-        />
+        <img src="@/assets/images/image 28.svg" alt="hero-image" class="hero-image" />
     </section>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import useNotify from '@/hooks/notifier'
 
 export default defineComponent({
     name: 'DesktopHero',
+    setup() {
+        const { notify } = useNotify()
+        function testNotification(){
+            notify('Search Button','Not implemented yet')
+        }
+
+        return {
+            testNotification
+        }
+    }
 });
 </script>
 

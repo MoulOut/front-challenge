@@ -44,7 +44,7 @@
 </template>
 
 <script lang="ts">
-import { IBook } from '@/interfaces/book';
+import { IBook } from '@/interfaces/IBook';
 import { defineComponent, PropType } from 'vue';
 
 export default defineComponent({
