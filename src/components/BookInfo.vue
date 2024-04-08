@@ -15,7 +15,7 @@
                 pulvinar justo dictum tempor.
             </p>
             <button class="book-buy" @click="buyBook" :disabled="isOutOfStock">{{ isOutOfStock ? 'Out of Stock' :
-                'BuyNow' }}</button>
+                'Buy Now' }}</button>
             <BookSubInfo v-if="!mobile" />
         </div>
     </div>
