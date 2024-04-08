@@ -9,10 +9,10 @@
                     <RouterLink class="subtitle__links" to="/bookstore">Bookstore</RouterLink>
                 </p>
             </div>
-            <select class="selector">
-                <option value="">Default Sorting</option>
-                <option value="">Lowest price</option>
-                <option value="">Higher price</option>
+            <select id="selector" class="selector">
+                <option id="opt1" value="">Default Sorting</option>
+                <option id="opt2" value="">Lowest price</option>
+                <option id="opt3" value="">Higher price</option>
             </select>
         </div>
     </section>
