@@ -14,38 +14,20 @@
                 augue tristique interdum. Nunc hendrerit nibh dui, quis
                 pulvinar justo dictum tempor.
             </p>
-            <button class="book-buy">Buy Now</button>
+            <button class="book-buy" @click="buyBook">Buy Now</button>
+            <BookSubInfo v-if="!mobile" />
         </div>
     </div>
-    <h2 class="book-report">Report an issue with this product</h2>
-    <ul class="book-info">
-        <li class="info-list">
-            <p class="info-title">Reading Age</p>
-            <div class="img-box">
-                <img src="@/assets/images/Reader.svg" alt="" class="info-image">
-                <p class="box-text">+18 yrs</p>
-            </div>
-        </li>
-        <li class="info-list">
-            <p class="info-title">Print Lenght</p>
-            <div class="img-box">
-                <img src="@/assets/images/pages.svg" alt="" class="info-image">
-                <p class="box-text">320 pages</p>
-            </div>
-        </li>
-        <li class="info-list">
-            <p class="info-title">Language</p>
-            <div class="img-box">
-                <img src="@/assets/images/world.svg" alt="" class="info-image">
-                <p class="box-text">English</p>
-            </div>
-        </li>
-    </ul>
+    <BookSubInfo v-if="mobile" />
 </template>
 
 <script lang="ts">
 import { IBook } from '@/interfaces/IBook';
+import { useStore } from '@/store';
+import { BUY_BOOK } from '@/store/type-actions';
 import { defineComponent, PropType } from 'vue';
+import useNotify from '@/hooks/notifier'
+import BookSubInfo from '@/components/BookSubInfo.vue'
 
 export default defineComponent({
     name: 'BookInfo',
@@ -53,8 +35,23 @@ export default defineComponent({
         book: {
             type: {} as PropType<IBook>, required: true
         }
-    }
+    },
+    components: { BookSubInfo },
+    setup(props) {
+        const store = useStore()
+        const { notify } = useNotify()
+        const mobile = window.innerWidth < 768;
+        function buyBook() {
+            store.dispatch(BUY_BOOK, props.book.id).then(() => {
+                notify('Congratulations!', 'Your purchase has been completed')
+            })
+        }
 
+        return {
+            buyBook,
+            mobile
+        }
+    }
 });
 </script>
 
@@ -150,7 +147,11 @@ export default defineComponent({
 
 @media screen and (min-width: 768px) {
     .book__information {
-        width: 30%;
+        width: 45%;
+    }
+
+    .book-image {
+        width: 25%;
     }
 }
 </style>
