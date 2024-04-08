@@ -1,7 +1,7 @@
 <template>
     <li class="book">
         <div class="book-colorblock"></div>
-        <slot name="img" />
+        <img :src="require(`@/assets/images/${book.title}.svg`)" alt="" class="book-image" />
         <div class="book-content">
             <h4 class="book-title">{{ book.title }}</h4>
             <p class="book-author">By {{ book.author }}</p>
@@ -51,6 +51,16 @@ export default defineComponent({
     border-top: 1px solid black;
     border-bottom: 1px solid black;
     width: 100%;
+}
+
+.book-image {
+    position: absolute;
+    width: 72%;
+    height: 100%;
+    border-top-left-radius: 2em;
+    border-bottom-right-radius: 2em;
+    top: -45%;
+    left: 15%;
 }
 
 .book-content {

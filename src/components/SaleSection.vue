@@ -3,18 +3,20 @@
         <div class="sale__titles">
             <h2>{{ title }}</h2>
         </div>
-        <Swiper :slides-per-view="1" :space-between="10" :width="180" :zoom="true">
+        <Swiper :slides-per-view="1" :space-between="10" :width="180">
             <SwiperSlide class="slide" v-for="book in books" :key="book.id">
                 <RouterLink :to="`/bookstore/${book.id}`">
                     <img :src="require(`@/assets/images/${book.title}.svg`)" :alt="`image of the book ${book.title}`"
                         class="book-image" />
                 </RouterLink>
-                <p class="book-title">{{ book.title }}</p>
-                <div class="book-rp">
-                    <p class="book-rate"><img src="@/assets/images/Star 9.svg" alt="" class="rate-star"> 4.3</p>
-                    <p class="book-price">${{ book.price }}</p>
+                <div class="book-info">
+                    <p class="book-title">{{ book.title }}</p>
+                    <div class="book-rp">
+                        <p class="book-rate"><img src="@/assets/images/Star 9.svg" alt="" class="rate-star"> 4.3</p>
+                        <p class="book-price">${{ book.price }}</p>
+                    </div>
+                    <RouterLink class="book-button" :to="`/bookstore/${book.id}`">Show Details</RouterLink>
                 </div>
-                <RouterLink class="book-button" :to="`/bookstore/${book.id}`">Show Details</RouterLink>
             </SwiperSlide>
         </Swiper>
     </section>
@@ -59,6 +61,8 @@ export default defineComponent({
     flex-direction: column;
     padding: 1rem;
     background-color: var(--white);
+    height: auto;
+    justify-content: space-between;
 }
 
 .book-image {
@@ -69,8 +73,13 @@ export default defineComponent({
     height: 100%;
 }
 
+.book-info{
+    display:flex;
+    flex-direction:column;
+}
+
 p {
-    margin-top: 0.5em
+    margin-top: 0.5em;
 }
 
 .book-title {

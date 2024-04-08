@@ -7,10 +7,7 @@
             </RouterLink>
         </div>
         <ul class="books">
-            <BookCard v-for="book in books.slice(0, booksToShow)" :key="book.id" :book="book"><template v-slot:img>
-                    <img :src="require(`@/assets/images/${book.title}.svg`)" alt="" class="book-image" />
-                </template>
-            </BookCard>
+            <BookCard v-for="book in books.slice(0, booksToShow)" :key="book.id" :book="book" />
         </ul>
     </section>
 </template>
@@ -64,16 +61,6 @@ export default defineComponent({
     text-decoration: none;
     color: var(--black);
     font-weight: 600;
-}
-
-.book-image {
-    position: absolute;
-    width: 72%;
-    height: 100%;
-    border-top-left-radius: 2em;
-    border-bottom-right-radius: 2em;
-    top: -45%;
-    left: 15%;
 }
 
 @media screen and (min-width: 768px) {
