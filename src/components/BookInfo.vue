@@ -43,9 +43,9 @@ export default defineComponent({
         const { notify } = useNotify()
         const mobile = window.innerWidth < 768;
         function buyBook() {
-            store.dispatch(BUY_BOOK, props.book.id).then(() => {
-                notify('Congratulations!', 'Your purchase has been completed')
-            })
+            store.dispatch(BUY_BOOK, props.book.id)
+                .then(() => notify('Congratulations!', 'Your purchase has been completed'))
+                .catch(() => notify('Sorry!', 'Your purchase failed, try again in a few seconds.'))
         }
 
         const isOutOfStock = computed(() => props.book.availableStock === 0);
