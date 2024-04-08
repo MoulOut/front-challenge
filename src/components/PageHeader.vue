@@ -58,7 +58,8 @@ export default defineComponent({
 }
 
 .header__content__logo-title,
-.header__buttons {
+.header__buttons,
+.header__content {
     display: flex;
     align-items: center;
 }
@@ -74,8 +75,6 @@ export default defineComponent({
 }
 
 .header__content {
-    display: flex;
-    align-items: center;
     justify-content: space-between;
     padding: 1em;
 }
@@ -159,10 +158,7 @@ export default defineComponent({
         background-color: var(--background);
     }
 
-    .header__login {
-        display: block;
-    }
-
+    .header__login,
     .header__title {
         display: block;
     }
@@ -175,10 +171,7 @@ export default defineComponent({
         display: flex;
     }
 
-    .hamburguer {
-        display: none;
-    }
-
+    .hamburguer,
     .menu {
         display: none;
     }

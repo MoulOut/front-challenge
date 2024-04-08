@@ -83,11 +83,7 @@ export default defineComponent({
 .book-description,
 .book-price,
 .book-stock,
-.book-buy,
-.book-report,
-.info-list,
-.info-title,
-.img-box {
+.book-buy {
     margin-bottom: 0.5em;
 }
 
@@ -123,37 +119,6 @@ export default defineComponent({
     color: var(--white);
     opacity: 0.8;
     cursor: default;
-}
-
-.book-report {
-    margin-top: 1em;
-    font-weight: 500;
-}
-
-.book-info {
-    display: flex;
-    align-items: center;
-}
-
-.info-list {
-    width: 30vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.info-title {
-    font-size: 14px;
-    font-weight: 500;
-}
-
-.img-box {
-    border: 1px solid black;
-    border-radius: 0.5em;
-    padding: 1em;
-    text-align: center;
-    font-size: 12px;
-    width: 60%;
 }
 
 @media screen and (min-width: 768px) {

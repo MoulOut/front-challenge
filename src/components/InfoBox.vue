@@ -26,7 +26,7 @@ export default defineComponent({
     text-align: center;
 }
 
-p {
+.box-description {
     font-weight: 500;
 }
 
