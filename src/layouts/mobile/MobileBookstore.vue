@@ -30,7 +30,7 @@ export default defineComponent({
 
         const books = computed(() =>
             store.state.books.filter(
-                (book) => !filter.value || book.title.includes(filter.value)
+                (book) => !filter.value || book.title.toLowerCase().includes(filter.value.toLowerCase())
             )
         )
 
