@@ -14,7 +14,8 @@
                 augue tristique interdum. Nunc hendrerit nibh dui, quis
                 pulvinar justo dictum tempor.
             </p>
-            <button class="book-buy" @click="buyBook">Buy Now</button>
+            <button class="book-buy" @click="buyBook" :disabled="isOutOfStock">{{ isOutOfStock ? 'Out of Stock' :
+                'BuyNow' }}</button>
             <BookSubInfo v-if="!mobile" />
         </div>
     </div>
@@ -25,7 +26,7 @@
 import { IBook } from '@/interfaces/IBook';
 import { useStore } from '@/store';
 import { BUY_BOOK } from '@/store/type-actions';
-import { defineComponent, PropType } from 'vue';
+import { computed, defineComponent, PropType } from 'vue';
 import useNotify from '@/hooks/notifier'
 import BookSubInfo from '@/components/BookSubInfo.vue'
 
@@ -47,9 +48,12 @@ export default defineComponent({
             })
         }
 
+        const isOutOfStock = computed(() => props.book.availableStock === 0);
+
         return {
             buyBook,
-            mobile
+            mobile,
+            isOutOfStock
         }
     }
 });
@@ -112,6 +116,13 @@ export default defineComponent({
 .book-buy:hover {
     background-color: var(--light-blue);
     cursor: pointer;
+}
+
+.book-buy:disabled {
+    background-color: var(--black);
+    color: var(--white);
+    opacity: 0.8;
+    cursor: default;
 }
 
 .book-report {
