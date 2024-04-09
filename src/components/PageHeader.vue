@@ -22,8 +22,7 @@
             <nav class="menu" :class="{ disabled: !menuActive }" @click="activateMenu">
                 <RouterLink class="menu-links" to="/">Home</RouterLink>
                 <RouterLink class="menu-links" to="/bookstore">Bookstore</RouterLink>
-                <RouterLink class="menu-links" to="/about"
-                    @click="showNotification('Sorry', 'This page hasnt been implemented yet')">About Us</RouterLink>
+                <RouterLink class="menu-links" to="/about">About Us</RouterLink>
             </nav>
         </div>
     </header>
