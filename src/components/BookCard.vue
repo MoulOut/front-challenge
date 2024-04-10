@@ -117,7 +117,7 @@ export default defineComponent({
 
 @media screen and (min-width: 768px) {
     .book {
-        justify-content: space-between;
+        height: 300px;
         width: 22%;
     }
 
