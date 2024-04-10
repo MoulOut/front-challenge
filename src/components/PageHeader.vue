@@ -51,6 +51,7 @@ export default defineComponent({
     background-color: var(--light-blue);
     position: relative;
     z-index: 10;
+    width: 100%;
 }
 
 .header__logo {
@@ -126,12 +127,13 @@ export default defineComponent({
 .menu {
     display: flex;
     flex-direction: column;
-    position: absolute;
+    position: fixed;
     width: 60vw;
     top: 0;
     right: 0;
     background-color: var(--black);
     height: 100vh;
+    transition: 0.3s;
     animation: show 0.3s backwards;
 }
 
@@ -151,7 +153,8 @@ export default defineComponent({
 }
 
 .disabled {
-    display: none;
+    visibility: hidden;
+    transform:translateX(60vw);
 }
 
 @keyframes show {
