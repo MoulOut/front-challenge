@@ -76,6 +76,7 @@ export default defineComponent({
 .book-information {
     display: flex;
     flex-direction: column;
+    overflow: auto;
 }
 
 .book-title,
