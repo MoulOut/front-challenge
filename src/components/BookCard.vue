@@ -9,7 +9,7 @@
                 <p class="book-rate"><img src="@/assets/images/Star 9.svg" alt="" class="rate-star"> 4.3</p>
                 <p class="book-price">${{ book.price }}</p>
             </div>
-            <RouterLink :to="`/bookstore/${book.id}`" class="book-link">{{mobile ? 'Buy': 'Buy Now'}}</RouterLink>
+            <RouterLink :to="`/bookstore/${book.id}`" class="book-link">{{ mobile ? 'Buy' : 'Buy Now' }}</RouterLink>
         </div>
     </li>
 </template>
@@ -25,7 +25,7 @@ export default defineComponent({
             type: {} as PropType<IBook>, required: true
         }
     },
-    setup(){
+    setup() {
         const mobile = window.innerWidth < 768;
 
         return {
@@ -68,6 +68,7 @@ export default defineComponent({
     border-bottom-right-radius: 2em;
     top: -45%;
     left: 15%;
+    pointer-events: none;
 }
 
 .book-content {
