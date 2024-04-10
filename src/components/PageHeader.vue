@@ -30,7 +30,6 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import useNotify from '@/hooks/notifier';
 
 export default defineComponent({
     name: 'PageHeader',
@@ -44,17 +43,6 @@ export default defineComponent({
             return (this.menuActive = !this.menuActive);
         },
     },
-    setup() {
-        const { notify } = useNotify()
-
-        function showNotification(title: string, text: string) {
-            notify(title, text);
-        }
-
-        return {
-            showNotification
-        }
-    }
 });
 </script>
 
@@ -144,6 +132,7 @@ export default defineComponent({
     right: 0;
     background-color: var(--black);
     height: 100vh;
+    transition: 0.3s;
 }
 
 .menu-links {
@@ -162,7 +151,8 @@ export default defineComponent({
 }
 
 .disabled {
-    display: none;
+    visibility: hidden;
+    transform: translateX(60vw);
 }
 
 @media screen and (min-width: 768px) {

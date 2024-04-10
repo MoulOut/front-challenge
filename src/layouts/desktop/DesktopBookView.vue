@@ -42,5 +42,6 @@ export default defineComponent({
     font-weight: 500;
     text-decoration: none;
     color: black;
+    width:fit-content;
 }
 </style>

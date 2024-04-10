@@ -89,6 +89,10 @@ strong {
     width: fit-content;
 }
 
+.section__card-article:hover{
+    background-color: var(--light-blue)
+}
+
 .section__card-texts {
     width: 60%;
     display: flex;
