@@ -74,8 +74,6 @@ export default defineComponent({
 }
 
 .book__information {
-    display: flex;
-    flex-direction: column;
     overflow: auto;
 }
 
