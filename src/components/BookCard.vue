@@ -45,10 +45,10 @@ export default defineComponent({
     border-radius: 1.5em;
     background-color: var(--white);
     margin-top: 10%;
-    height: 310px;
+    height: 260px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .book-colorblock {
