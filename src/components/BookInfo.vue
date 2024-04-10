@@ -73,7 +73,7 @@ export default defineComponent({
     margin-right: 1em;
 }
 
-.book-information {
+.book__information {
     display: flex;
     flex-direction: column;
     overflow: auto;
