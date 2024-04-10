@@ -132,7 +132,7 @@ export default defineComponent({
     right: 0;
     background-color: var(--black);
     height: 100vh;
-    transition: 0.3s;
+    animation: show 0.3s backwards;
 }
 
 .menu-links {
@@ -151,8 +151,15 @@ export default defineComponent({
 }
 
 .disabled {
-    visibility: hidden;
-    transform: translateX(60vw);
+    display: none;
+}
+
+@keyframes show {
+    0% {
+        width: 0;
+    }
+
+    100% {}
 }
 
 @media screen and (min-width: 768px) {
