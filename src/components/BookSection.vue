@@ -18,6 +18,7 @@ import BookCard from '@/components/BookCard.vue';
 import { useStore } from '@/store';
 import { GET_BOOKS } from '@/store/type-actions';
 import { IBook } from '@/interfaces/IBook';
+import useMobile from '@/hooks/mobile'
 
 export default defineComponent({
     name: 'BookSection',
@@ -26,7 +27,8 @@ export default defineComponent({
         const store = useStore();
         const books = ref([] as IBook[]);
         store.dispatch(GET_BOOKS).then(() => books.value = store.state.books);
-        const booksToShow = computed(() => window.innerWidth < 768 ? 3 : 4)
+        const { isMobile } = useMobile()
+        const booksToShow = computed(() => isMobile() ? 3 : 4)
 
         return {
             books,
