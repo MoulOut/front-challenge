@@ -4,8 +4,10 @@
 </template>
 
 <script lang="ts">
+import { useWindowSize } from '@vueuse/core'
 import MobileHome from '@/layouts/mobile/MobileHome.vue';
 import DesktopHome from '@/layouts/desktop/DesktopHome.vue';
+import { computed } from 'vue';
 
 export default {
     name: 'HomeView',
@@ -14,8 +16,8 @@ export default {
         DesktopHome,
     },
     setup() {
-        const deviceWidth = window.innerWidth
-        const mobile =  deviceWidth < 768;
+        const { width } = useWindowSize()
+        const mobile = computed(() => width.value < 768);
 
         return {
             mobile,

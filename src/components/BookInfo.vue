@@ -29,6 +29,7 @@ import { BUY_BOOK } from '@/store/type-actions';
 import { computed, defineComponent, PropType } from 'vue';
 import useNotify from '@/hooks/notifier'
 import BookSubInfo from '@/components/BookSubInfo.vue'
+import { useWindowSize } from '@vueuse/core';
 
 export default defineComponent({
     name: 'BookInfo',
@@ -41,7 +42,8 @@ export default defineComponent({
     setup(props) {
         const store = useStore()
         const { notify } = useNotify()
-        const mobile = window.innerWidth < 768;
+        const { width } = useWindowSize();
+        const mobile = computed(() => width.value < 768);
         function buyBook() {
             store.dispatch(BUY_BOOK, props.book.id)
                 .then(() => notify('Congratulations!', 'Your purchase has been completed'))

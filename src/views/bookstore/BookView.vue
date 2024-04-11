@@ -10,6 +10,7 @@ import DesktopBookView from '@/layouts/desktop/DesktopBookView.vue';
 import { IBook } from '@/interfaces/IBook';
 import { useStore } from '@/store';
 import { GET_BOOKS } from '@/store/type-actions';
+import { useWindowSize } from '@vueuse/core';
 
 export default defineComponent({
     name: 'BookView',
@@ -33,8 +34,8 @@ export default defineComponent({
             findBooks()
         })
         findBooks()
-        const deviceWidth = window.innerWidth;
-        const mobile = deviceWidth < 768;
+        const { width } = useWindowSize();
+        const mobile = computed(() => width.value < 768);
 
         return {
             book,
