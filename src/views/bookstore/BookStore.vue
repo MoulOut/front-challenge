@@ -1,23 +1,22 @@
 <template>
-    <MobileBookstore v-if="mobile" />
+    <MobileBookstore v-if="isMobile()" />
     <DesktopBookstore v-else />
 </template>
 
 <script lang="ts">
 import DesktopBookstore from '@/layouts/desktop/DesktopBookstore.vue';
 import MobileBookstore from '@/layouts/mobile/MobileBookstore.vue';
-import { useWindowSize } from '@vueuse/core';
-import { computed, defineComponent } from 'vue';
+import { defineComponent } from 'vue';
+import useMobile from '@/hooks/mobile';
 
 export default defineComponent({
     name: 'BookStore',
     components: { MobileBookstore, DesktopBookstore },
     setup() {
-        const { width } = useWindowSize();
-        const mobile = computed(() => width.value < 768);
+        const { isMobile } = useMobile()
 
         return {
-            mobile,
+            isMobile,
         };
     },
 });

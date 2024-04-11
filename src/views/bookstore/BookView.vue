@@ -1,5 +1,5 @@
 <template>
-    <MobileBookView :book="book" v-if="mobile" />
+    <MobileBookView :book="book" v-if="isMobile()" />
     <DesktopBookView :book="book" v-else />
 </template>
 
@@ -10,7 +10,7 @@ import DesktopBookView from '@/layouts/desktop/DesktopBookView.vue';
 import { IBook } from '@/interfaces/IBook';
 import { useStore } from '@/store';
 import { GET_BOOKS } from '@/store/type-actions';
-import { useWindowSize } from '@vueuse/core';
+import useMobile from '@/hooks/mobile';
 
 export default defineComponent({
     name: 'BookView',
@@ -34,12 +34,11 @@ export default defineComponent({
             findBooks()
         })
         findBooks()
-        const { width } = useWindowSize();
-        const mobile = computed(() => width.value < 768);
+        const { isMobile } = useMobile()
 
         return {
             book,
-            mobile
+            isMobile
         };
     },
 });

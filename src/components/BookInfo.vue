@@ -16,10 +16,10 @@
             </p>
             <button class="book-buy" @click="buyBook" :disabled="isOutOfStock">{{ isOutOfStock ? 'Out of Stock' :
                 'Buy Now' }}</button>
-            <BookSubInfo v-if="!mobile" />
+            <BookSubInfo v-if="!isMobile()" />
         </div>
     </div>
-    <BookSubInfo v-if="mobile" />
+    <BookSubInfo v-if="isMobile()" />
 </template>
 
 <script lang="ts">
@@ -29,7 +29,7 @@ import { BUY_BOOK } from '@/store/type-actions';
 import { computed, defineComponent, PropType } from 'vue';
 import useNotify from '@/hooks/notifier'
 import BookSubInfo from '@/components/BookSubInfo.vue'
-import { useWindowSize } from '@vueuse/core';
+import useMobile from '@/hooks/mobile';
 
 export default defineComponent({
     name: 'BookInfo',
@@ -42,8 +42,7 @@ export default defineComponent({
     setup(props) {
         const store = useStore()
         const { notify } = useNotify()
-        const { width } = useWindowSize();
-        const mobile = computed(() => width.value < 768);
+        const { isMobile } = useMobile()
         function buyBook() {
             store.dispatch(BUY_BOOK, props.book.id)
                 .then(() => notify('Congratulations!', 'Your purchase has been completed'))
@@ -54,7 +53,7 @@ export default defineComponent({
 
         return {
             buyBook,
-            mobile,
+            isMobile,
             isOutOfStock
         }
     }
