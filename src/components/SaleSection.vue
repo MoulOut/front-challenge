@@ -5,6 +5,7 @@
         </div>
         <Swiper :slides-per-view="1" :space-between="10" :width="180">
             <SwiperSlide class="slide" v-for="book in books" :key="book.id">
+                <EmptyState v-if="books.length == 0" />
                 <RouterLink :to="`/bookstore/${book.id}`">
                     <img :src="require(`@/assets/images/${book.title}.svg`)" :alt="`image of the book ${book.title}`"
                         class="book-image" />
@@ -26,12 +27,13 @@
 import { IBook } from '@/interfaces/IBook';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import { defineComponent, PropType } from 'vue';
+import EmptyState from './EmptyState.vue';
 
 import 'swiper/css';
 
 export default defineComponent({
     name: 'SaleSection',
-    components: { Swiper, SwiperSlide },
+    components: { Swiper, SwiperSlide, EmptyState },
     props: {
         title: {
             type: String,
@@ -73,9 +75,9 @@ export default defineComponent({
     height: 100%;
 }
 
-.book-info{
-    display:flex;
-    flex-direction:column;
+.book-info {
+    display: flex;
+    flex-direction: column;
 }
 
 p {

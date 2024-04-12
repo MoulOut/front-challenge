@@ -7,6 +7,7 @@
             </RouterLink>
         </div>
         <ul class="books">
+            <EmptyState v-if="books.length === 0"/>
             <BookCard v-for="book in books.slice(0, booksToShow)" :key="book.id" :book="book" />
         </ul>
     </section>
@@ -19,10 +20,11 @@ import { useStore } from '@/store';
 import { GET_BOOKS } from '@/store/type-actions';
 import { IBook } from '@/interfaces/IBook';
 import useMobile from '@/hooks/mobile'
+import EmptyState from './EmptyState.vue';
 
 export default defineComponent({
     name: 'BookSection',
-    components: { BookCard },
+    components: { BookCard, EmptyState },
     setup() {
         const store = useStore();
         const books = ref([] as IBook[]);
