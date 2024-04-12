@@ -4,8 +4,8 @@
             <h2>{{ title }}</h2>
         </div>
         <Swiper :slides-per-view="1" :space-between="10" :width="180">
+            <EmptyState v-if="books.length === 0" />
             <SwiperSlide class="slide" v-for="book in books" :key="book.id">
-                <EmptyState v-if="books.length == 0" />
                 <RouterLink :to="`/bookstore/${book.id}`">
                     <img :src="require(`@/assets/images/${book.title}.svg`)" :alt="`image of the book ${book.title}`"
                         class="book-image" />
