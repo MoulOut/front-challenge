@@ -28,7 +28,7 @@ export default defineComponent({
 
 <style scoped>
 .notificacoes {
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     padding: 0.5em;
