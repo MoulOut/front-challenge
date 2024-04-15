@@ -41,7 +41,7 @@ export default defineComponent({
     methods: {
         activateMenu() {
             return (this.menuActive = !this.menuActive);
-        },
+        }
     },
 });
 </script>
@@ -49,9 +49,10 @@ export default defineComponent({
 <style scoped>
 .header {
     background-color: var(--light-blue);
-    position: relative;
+    position: fixed;
     z-index: 10;
     width: 100%;
+    top: 0;
 }
 
 .header__logo {
@@ -154,7 +155,7 @@ export default defineComponent({
 
 .disabled {
     visibility: hidden;
-    transform:translateX(60vw);
+    transform: translateX(60vw);
 }
 
 @keyframes show {
@@ -168,6 +169,7 @@ export default defineComponent({
 @media screen and (min-width: 768px) {
     .header {
         background-color: var(--background);
+        position: relative
     }
 
     .header__login,

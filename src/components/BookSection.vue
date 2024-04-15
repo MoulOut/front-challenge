@@ -7,7 +7,7 @@
             </RouterLink>
         </div>
         <ul class="books">
-            <EmptyState v-if="books.length === 0"/>
+            <EmptyState v-if="books.length === 0" text="Fetching data from API..."/>
             <BookCard v-for="book in books.slice(0, booksToShow)" :key="book.id" :book="book" />
         </ul>
     </section>
