@@ -1,6 +1,6 @@
 <template>
     <PageHeader />
-    <RouterView class="View"></RouterView>
+    <RouterView class="view"></RouterView>
     <PageFooter />
     <Notifications />
 </template>
@@ -44,12 +44,12 @@ export default defineComponent({
     -moz-osx-font-smoothing: grayscale;
 }
 
-.View {
+.view {
     margin-top: 70px
 }
 
 @media screen and (min-width: 768px) {
-    .View {
+    .view {
         margin-top: 0px;
     }
 }

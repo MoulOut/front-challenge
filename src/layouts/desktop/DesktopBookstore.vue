@@ -1,5 +1,5 @@
 <template>
-    <PageContent class="content">
+    <PageContent class="content view">
         <template v-slot:content__inner>
             <BookstoreHead />
             <input type="search" class="book-search" placeholder="Find your book here" v-model="filter"
