@@ -1,7 +1,8 @@
 <template>
     <li class="info-box">
-        <slot name="img" />
-        <p class="box-description">{{ description }}</p>
+        <img :src="require(`@/assets/images/${infoBoxProps.imgName}.svg`)" alt="" class="box-image"
+            :style="infoBoxProps.style" />
+        <p class="box-description">{{ infoBoxProps.description }}</p>
     </li>
 </template>
 
@@ -11,12 +12,9 @@ import { defineComponent } from 'vue';
 export default defineComponent({
     name: 'InfoBox',
     props: {
-        description: {
-            type: String,
-        },
-        color: {
-            type: String,
-        },
+        infoBoxProps: {
+            type: Object, required: true
+        }
     },
 });
 </script>
@@ -30,4 +28,10 @@ export default defineComponent({
     font-weight: 500;
 }
 
+.box-image {
+    border-radius: 1em;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    width: 60px;
+}
 </style>
